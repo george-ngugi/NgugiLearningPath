@@ -502,6 +502,7 @@ let allVoices = [];
 
 // Game mode state
 let currentGameMode = null; // 'prize' or 'tugofwar'
+let currentDifficulty = 'easy'; // Track current difficulty level
 
 // Tug of War game state
 let towPlayerScore = 0;
@@ -723,13 +724,32 @@ function init() {
 
 // Show mode selection screen
 function showModeSelection() {
-    modeSelectionEl.classList.remove('hidden');
-    prizeModeContainer.classList.add('hidden');
-    tugOfWarContainer.classList.add('hidden');
-    twoPlayerTowContainer.classList.add('hidden');
-    towOpponentSelectionEl.classList.add('hidden');
-    playerSetupScreen.classList.add('hidden');
+    if (modeSelectionEl) modeSelectionEl.classList.remove('hidden');
+    if (prizeModeContainer) prizeModeContainer.classList.add('hidden');
+    if (tugOfWarContainer) tugOfWarContainer.classList.add('hidden');
+    if (twoPlayerTowContainer) twoPlayerTowContainer.classList.add('hidden');
+    if (towOpponentSelectionEl) towOpponentSelectionEl.classList.add('hidden');
+    if (playerSetupScreen) playerSetupScreen.classList.add('hidden');
     currentGameMode = null;
+}
+
+// Back to main menu from Prize Mode
+function backToMainMenu() {
+    // Hide all game sections
+    if (readingGame) readingGame.classList.remove('active');
+    if (spellingGame) spellingGame.classList.remove('active');
+    if (sentenceGame) sentenceGame.classList.remove('active');
+    if (comprehensionGame) comprehensionGame.classList.remove('active');
+    if (rhymingGame) rhymingGame.classList.remove('active');
+    if (mathGame) mathGame.classList.remove('active');
+    if (frenchGame) frenchGame.classList.remove('active');
+    
+    // Hide feedback and next button
+    hideFeedback();
+    if (nextBtn) nextBtn.classList.add('hidden');
+    
+    // Return to mode selection
+    showModeSelection();
 }
 
 // Show opponent selection screen
@@ -766,7 +786,19 @@ function startPrizeMode() {
     modeSelectionEl.classList.add('hidden');
     prizeModeContainer.classList.remove('hidden');
     tugOfWarContainer.classList.add('hidden');
-    twoPlayerTowContainer.classList.add('hidden');
+    if (twoPlayerTowContainer) twoPlayerTowContainer.classList.add('hidden');
+    
+    // Ensure reading game is active by default
+    if (readingGame) {
+        readingGame.classList.add('active');
+        spellingGame.classList.remove('active');
+        sentenceGame.classList.remove('active');
+        comprehensionGame.classList.remove('active');
+        rhymingGame.classList.remove('active');
+        mathGame.classList.remove('active');
+        frenchGame.classList.remove('active');
+    }
+    
     loadNewWord();
 }
 
@@ -1123,6 +1155,15 @@ function getRandomWord() {
         word = allWords[Math.floor(Math.random() * allWords.length)];
     } while (usedWords.has(word.word));
     
+    // Determine difficulty based on which database the word came from
+    if (wordDatabase.easy.some(w => w.word === word.word)) {
+        currentDifficulty = 'easy';
+    } else if (wordDatabase.medium.some(w => w.word === word.word)) {
+        currentDifficulty = 'medium';
+    } else {
+        currentDifficulty = 'hard';
+    }
+    
     usedWords.add(word.word);
     return word;
 }
@@ -1252,6 +1293,9 @@ function checkComprehensionAnswer(selected, btn, correctAnswer) {
         streak++;
         correctAnswers++;
         stars += 2;
+        
+        // Award building blocks based on difficulty
+        awardBuildingResources(currentDifficulty);
         
         if (questionsCompleted === 0) {
             checkAchievement('first_word');
@@ -1623,6 +1667,9 @@ function checkMathAnswer(selected, btn) {
         stars++;
         playSuccessAudio();
         
+        // Award building blocks based on difficulty
+        awardBuildingResources(currentDifficulty);
+        
         if (questionsCompleted === 0) {
             checkAchievement('first_word');
         }
@@ -1655,6 +1702,9 @@ function checkCountingAnswer(selected, btn) {
         correctAnswers++;
         stars++;
         playSuccessAudio();
+        
+        // Award building blocks based on difficulty
+        awardBuildingResources(currentDifficulty);
         
         if (questionsCompleted === 0) {
             checkAchievement('first_word');
@@ -2026,6 +2076,7 @@ function pronounceSentence() {
 // Check reading answer
 // Check reading answer
 function checkReadingAnswer(selected, btn, correctAnswer) {
+    console.log('checkReadingAnswer called:', { selected, correctAnswer, readingType });
     const buttons = readingOptionsEl.querySelectorAll('.option-btn');
     buttons.forEach(b => b.disabled = true);
     
@@ -2037,6 +2088,9 @@ function checkReadingAnswer(selected, btn, correctAnswer) {
         streak++;
         correctAnswers++;
         stars += readingType === 'sentence' ? 2 : 1;
+        
+        // Award building blocks based on difficulty
+        awardBuildingResources(currentDifficulty);
         
         if (questionsCompleted === 0) {
             checkAchievement('first_word');
@@ -2056,7 +2110,9 @@ function checkReadingAnswer(selected, btn, correctAnswer) {
     
     questionsCompleted++;
     updateScoreDisplay();
+    console.log('Showing next button, nextBtn element:', nextBtn);
     nextBtn.classList.remove('hidden');
+    console.log('Next button classes after remove:', nextBtn.className);
 }
 
 // Check spelling
@@ -2080,6 +2136,9 @@ function checkSpelling() {
         stars++;
         spellingInput.style.borderColor = '#4caf50';
         spellingInput.style.background = '#e8f5e9';
+        
+        // Award building blocks based on difficulty
+        awardBuildingResources(currentDifficulty);
         
         if (questionsCompleted === 0) {
             checkAchievement('first_word');
@@ -2717,6 +2776,9 @@ function checkTowAnswer(isCorrect, btn) {
         towRopePosition += 10; // Player pulls rope
         towStatusEl.textContent = '🎉 Correct! You pulled the rope!';
         towStatusEl.style.color = '#4caf50';
+        
+        // Award building blocks based on difficulty
+        awardBuildingResources(currentDifficulty);
     } else {
         btn.classList.add('incorrect');
         towStatusEl.textContent = '💪 Computer wins this round!';
@@ -3054,8 +3116,8 @@ function showTwoPlayerGameOver() {
     document.getElementById('towReplay2PBtn').addEventListener('click', initializeTwoPlayerTugOfWar);
 }
 
-// Register service worker for PWA
-if ('serviceWorker' in navigator) {
+// Register service worker for PWA (only when served via HTTP/HTTPS)
+if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
             .then(registration => {
@@ -3069,3 +3131,88 @@ if ('serviceWorker' in navigator) {
 
 // Initialize the game when the page loads
 init();
+
+// Building Resources System
+let buildingResources = {
+    grass: 0,
+    dirt: 0,
+    wood: 0,
+    stone: 0,
+    iron: 0,
+    gold: 0,
+    diamond: 0
+};
+
+// Load building data from localStorage
+function loadBuildingData() {
+    const saved = localStorage.getItem('buildingResources');
+    if (saved) {
+        buildingResources = JSON.parse(saved);
+    }
+}
+
+// Save building data to localStorage
+function saveBuildingData() {
+    localStorage.setItem('buildingResources', JSON.stringify(buildingResources));
+}
+
+// Update resource display in UI
+function updateResourceDisplay() {
+    const blockTypes = ['grass', 'dirt', 'wood', 'stone', 'iron', 'gold', 'diamond'];
+    blockTypes.forEach(type => {
+        const countEl = document.getElementById(`count-${type}`);
+        if (countEl) {
+            countEl.textContent = buildingResources[type] || 0;
+        }
+    });
+}
+
+// Award building resources based on difficulty
+function awardBuildingResources(difficulty) {
+    let rewards = {};
+    
+    if (difficulty === 'easy') {
+        rewards = { grass: 2, dirt: 2, wood: 1 };
+    } else if (difficulty === 'medium') {
+        rewards = { wood: 2, stone: 1, iron: 1 };
+    } else if (difficulty === 'hard') {
+        rewards = { stone: 2, iron: 1, gold: 1, diamond: 1 };
+    }
+    
+    // Add rewards to inventory
+    for (const [blockType, amount] of Object.entries(rewards)) {
+        buildingResources[blockType] += amount;
+    }
+    
+    saveBuildingData();
+    updateResourceDisplay();
+    
+    // Show notification
+    showBuildingRewardNotification(rewards);
+}
+
+// Show building reward notification
+function showBuildingRewardNotification(rewards) {
+    const blockCounter = document.getElementById('blockCounter');
+    const blockCounterText = document.getElementById('blockCounterText');
+    
+    if (!blockCounter || !blockCounterText) return;
+    
+    // Format the reward text
+    const rewardText = Object.entries(rewards)
+        .map(([type, count]) => `+${count} ${type.charAt(0).toUpperCase() + type.slice(1)}`)
+        .join(', ');
+    
+    blockCounterText.textContent = rewardText;
+    
+    // Show the counter
+    blockCounter.classList.remove('hidden');
+    
+    // Hide after 3 seconds
+    setTimeout(() => {
+        blockCounter.classList.add('hidden');
+    }, 3000);
+}
+
+// Initialize building resources on page load
+loadBuildingData();

@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" href="icon-192.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -33,12 +34,23 @@
                     <p>Challenge your opponent in an exciting battle of knowledge!</p>
                     <button class="mode-select-btn" onclick="startTugOfWarMode()">Start Battle</button>
                 </div>
+                <div class="mode-card" id="buildingModeCard">
+                    <div class="mode-icon">⛏️</div>
+                    <h3>Minecraft World</h3>
+                    <p>Build your own 3D world with blocks you've earned!</p>
+                    <button class="mode-select-btn" onclick="startBuildingMode()">Build Now</button>
+                </div>
             </div>
         </div>
         
         
         <!-- Main Game Container (Prize Mode) -->
         <div id="prize-mode-container" class="hidden">
+        
+        <div class="prize-mode-header">
+            <button id="backToMenuBtn" class="back-to-menu-btn" onclick="backToMainMenu()">⬅️ Main Menu</button>
+            <h2 class="prize-mode-title">🏆 Prize Mode</h2>
+        </div>
         
         <div class="subject-selector">
             <button id="englishSubject" class="subject-btn active">🇬🇧 English</button>
@@ -333,6 +345,96 @@
         </div>
 
 
+        <!-- Building Mode Container with Three.js -->
+        <!-- Minecraft Building Mode -->
+        <div id="building-mode-container" class="hidden">
+            <!-- Three.js Canvas -->
+            <div id="minecraft-world" class="minecraft-canvas">
+                <div class="controls-overlay">
+                    <h3>⛏️ Minecraft World</h3>
+                    <p>🖱️ Click to place | Right-click to remove</p>
+                    <p>🔄 Drag to rotate | Scroll to zoom</p>
+                </div>
+            </div>
+            
+            <!-- Block Inventory Sidebar -->
+            <div class="block-inventory">
+                <h3>📦 Your Blocks</h3>
+                    
+                    <div class="selected-block-display">
+                        <strong>Selected:</strong>
+                        <div id="selectedBlockDisplay" class="selected-block-info">
+                            <div class="block-preview grass-block"></div>
+                            <span>Grass</span>
+                        </div>
+                    </div>
+                    
+                    <div class="inventory-slots">
+                        <div class="inventory-slot" data-block="grass" onclick="selectBlock('grass')">
+                            <div class="block-preview grass-block"></div>
+                            <div class="block-info">
+                                <h4>Grass</h4>
+                                <div class="block-count" id="count-grass">0</div>
+                            </div>
+                        </div>
+                        <div class="inventory-slot" data-block="dirt" onclick="selectBlock('dirt')">
+                            <div class="block-preview dirt-block"></div>
+                            <div class="block-info">
+                                <h4>Dirt</h4>
+                                <div class="block-count" id="count-dirt">0</div>
+                            </div>
+                        </div>
+                        <div class="inventory-slot" data-block="wood" onclick="selectBlock('wood')">
+                            <div class="block-preview wood-block"></div>
+                            <div class="block-info">
+                                <h4>Wood</h4>
+                                <div class="block-count" id="count-wood">0</div>
+                            </div>
+                        </div>
+                        <div class="inventory-slot" data-block="stone" onclick="selectBlock('stone')">
+                            <div class="block-preview stone-block"></div>
+                            <div class="block-info">
+                                <h4>Stone</h4>
+                                <div class="block-count" id="count-stone">0</div>
+                            </div>
+                        </div>
+                        <div class="inventory-slot" data-block="iron" onclick="selectBlock('iron')">
+                            <div class="block-preview iron-block"></div>
+                            <div class="block-info">
+                                <h4>Iron</h4>
+                                <div class="block-count" id="count-iron">0</div>
+                            </div>
+                        </div>
+                        <div class="inventory-slot" data-block="gold" onclick="selectBlock('gold')">
+                            <div class="block-preview gold-block"></div>
+                            <div class="block-info">
+                                <h4>Gold</h4>
+                                <div class="block-count" id="count-gold">0</div>
+                            </div>
+                        </div>
+                        <div class="inventory-slot" data-block="diamond" onclick="selectBlock('diamond')">
+                            <div class="block-preview diamond-block"></div>
+                            <div class="block-info">
+                                <h4>Diamond</h4>
+                                <div class="block-count" id="count-diamond">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="world-actions">
+                        <button id="saveWorld" onclick="saveMinecraftWorld()">
+                            💾 Save World
+                        </button>
+                        <button id="clearWorld" onclick="clearMinecraftWorld()">
+                            🗑️ Clear All
+                        </button>
+                        <button id="backToModeBtn" onclick="backToModeSelection()">
+                            ← Back to Menu
+                        </button>
+                    </div>
+                </div>
+        </div>
+
         <!-- Reward Popup -->
         <div id="rewardPopup" class="reward-popup hidden">
             <div class="reward-content">
@@ -341,6 +443,12 @@
                 <p id="rewardMessage">You earned a reward!</p>
                 <button id="closeReward" class="reward-close-btn">Continue! 🚀</button>
             </div>
+        </div>
+
+        <!-- Minecraft Block Counter -->
+        <div id="blockCounter" class="block-counter hidden">
+            <div class="block-counter-icon">🧱</div>
+            <div class="block-counter-text" id="blockCounterText">+2 Grass</div>
         </div>
 
         <!-- Passcode Modal -->
@@ -359,5 +467,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="minecraft-world.js"></script>
 </body>
 </html>
