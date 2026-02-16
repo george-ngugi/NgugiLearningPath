@@ -10,7 +10,17 @@ const wordDatabase = {
         { word: 'bed', emoji: '🛏️', options: ['bed', 'bell', 'bet', 'ben'] },
         { word: 'cup', emoji: '☕', options: ['cup', 'cub', 'cut', 'cuff'] },
         { word: 'pen', emoji: '🖊️', options: ['pen', 'pet', 'peg', 'peck'] },
-        { word: 'pig', emoji: '🐷', options: ['pig', 'pin', 'pit', 'pick'] }
+        { word: 'pig', emoji: '🐷', options: ['pig', 'pin', 'pit', 'pick'] },
+        { word: 'bee', emoji: '🐝', options: ['bee', 'bed', 'beg', 'bet'] },
+        { word: 'fox', emoji: '🦊', options: ['fox', 'fix', 'box', 'fax'] },
+        { word: 'ant', emoji: '🐜', options: ['ant', 'and', 'aunt', 'art'] },
+        { word: 'bus', emoji: '🚌', options: ['bus', 'bug', 'but', 'bun'] },
+        { word: 'egg', emoji: '🥚', options: ['egg', 'end', 'eat', 'ear'] },
+        { word: 'owl', emoji: '🦉', options: ['owl', 'oil', 'old', 'our'] },
+        { word: 'box', emoji: '📦', options: ['box', 'boy', 'bow', 'bot'] },
+        { word: 'bag', emoji: '👜', options: ['bag', 'bat', 'bad', 'ban'] },
+        { word: 'key', emoji: '🔑', options: ['key', 'kit', 'kid', 'keg'] },
+        { word: 'fan', emoji: '🪭', options: ['fan', 'fun', 'fin', 'fawn'] }
     ],
     medium: [
         { word: 'fish', emoji: '🐟', options: ['fish', 'fist', 'fix', 'fit'] },
@@ -22,7 +32,17 @@ const wordDatabase = {
         { word: 'frog', emoji: '🐸', options: ['frog', 'frost', 'front', 'frock'] },
         { word: 'moon', emoji: '🌙', options: ['moon', 'mood', 'moot', 'moose'] },
         { word: 'duck', emoji: '🦆', options: ['duck', 'dunk', 'dust', 'dusk'] },
-        { word: 'ship', emoji: '🚢', options: ['ship', 'shin', 'shift', 'shim'] }
+        { word: 'ship', emoji: '🚢', options: ['ship', 'shin', 'shift', 'shim'] },
+        { word: 'tiger', emoji: '🐯', options: ['tiger', 'tinger', 'tigar', 'tyger'] },
+        { word: 'apple', emoji: '🍎', options: ['apple', 'aple', 'appel', 'aplle'] },
+        { word: 'cloud', emoji: '☁️', options: ['cloud', 'clowd', 'claud', 'cloude'] },
+        { word: 'train', emoji: '🚂', options: ['train', 'trane', 'trayn', 'trian'] },
+        { word: 'plant', emoji: '🌱', options: ['plant', 'plent', 'plaint', 'planat'] },
+        { word: 'smile', emoji: '😄', options: ['smile', 'smyle', 'smail', 'smiel'] },
+        { word: 'beach', emoji: '🏖️', options: ['beach', 'beech', 'beatch', 'beache'] },
+        { word: 'horse', emoji: '🐴', options: ['horse', 'hourse', 'horce', 'hoarse'] },
+        { word: 'light', emoji: '💡', options: ['light', 'lite', 'lyte', 'lighte'] },
+        { word: 'water', emoji: '💧', options: ['water', 'watter', 'watr', 'watar'] }
     ],
     hard: [
         { word: 'house', emoji: '🏠', options: ['house', 'hound', 'howl', 'hoist'] },
@@ -34,7 +54,17 @@ const wordDatabase = {
         { word: 'water', emoji: '💧', options: ['water', 'wader', 'wafer', 'waver'] },
         { word: 'rabbit', emoji: '🐰', options: ['rabbit', 'rabid', 'rapid', 'raffle'] },
         { word: 'chair', emoji: '🪑', options: ['chair', 'charm', 'charge', 'chart'] },
-        { word: 'smile', emoji: '😄', options: ['smile', 'smite', 'smell', 'smoke'] }
+        { word: 'smile', emoji: '😄', options: ['smile', 'smite', 'smell', 'smoke'] },
+        { word: 'elephant', emoji: '🐘', options: ['elephant', 'elegant', 'element', 'elevate'] },
+        { word: 'mountain', emoji: '⛰️', options: ['mountain', 'maintain', 'fountain', 'mournful'] },
+        { word: 'chocolate', emoji: '🍫', options: ['chocolate', 'chronicle', 'cholera', 'chuckle'] },
+        { word: 'butterfly', emoji: '🦋', options: ['butterfly', 'buttery', 'battery', 'bitterly'] },
+        { word: 'treasure', emoji: '💎', options: ['treasure', 'measure', 'pleasure', 'leisure'] },
+        { word: 'adventure', emoji: '🗺️', options: ['adventure', 'advertise', 'advance', 'advantage'] },
+        { word: 'dinosaur', emoji: '🦕', options: ['dinosaur', 'discover', 'discourse', 'disorder'] },
+        { word: 'Saturday', emoji: '📅', options: ['Saturday', 'salutary', 'sanitary', 'sanctuary'] },
+        { word: 'beautiful', emoji: '✨', options: ['beautiful', 'bountiful', 'dutiful', 'peaceful'] },
+        { word: 'library', emoji: '📚', options: ['library', 'liberty', 'literary', 'litany'] }
     ]
 };
 
@@ -144,6 +174,26 @@ const comprehensionDatabase = {
                 { question: 'What lands on a flower?', options: ['a butterfly', 'a bee', 'a bird', 'a ladybug'], answer: 'a butterfly' },
                 { question: 'What does Lucy watch?', options: ['the butterfly fly away', 'the flowers grow', 'the sun set', 'children play'], answer: 'the butterfly fly away' }
             ]
+        },
+        {
+            passage: "Ben has a red bike. He rides his bike to school every day. Ben wears a helmet to be safe. His best friend Tim rides with him. They always wave to the crossing guard.",
+            emoji: '🚲',
+            questions: [
+                { question: 'What color is Ben\'s bike?', options: ['red', 'blue', 'green', 'yellow'], answer: 'red' },
+                { question: 'Where does Ben ride his bike?', options: ['to school', 'to the park', 'to the store', 'to the beach'], answer: 'to school' },
+                { question: 'What does Ben wear to be safe?', options: ['a helmet', 'a jacket', 'gloves', 'shoes'], answer: 'a helmet' },
+                { question: 'Who rides with Ben?', options: ['Tim', 'Lucy', 'Tom', 'Sam'], answer: 'Tim' }
+            ]
+        },
+        {
+            passage: "Mia loves to paint. She has many colors of paint. Today she painted a big sun and a blue sky. She also painted green grass and a brown tree. Her mom put the painting on the fridge.",
+            emoji: '🎨',
+            questions: [
+                { question: 'What does Mia love to do?', options: ['paint', 'read', 'sing', 'dance'], answer: 'paint' },
+                { question: 'What color did she paint the sun?', options: ['yellow', 'orange', 'red', 'white'], answer: 'yellow' },
+                { question: 'What color was the sky?', options: ['blue', 'gray', 'white', 'purple'], answer: 'blue' },
+                { question: 'Where did mom put the painting?', options: ['on the fridge', 'on the wall', 'in a book', 'in the closet'], answer: 'on the fridge' }
+            ]
         }
     ],
     medium: [
@@ -166,6 +216,26 @@ const comprehensionDatabase = {
                 { question: 'How many books does Emma have?', options: ['twenty books', 'ten books', 'five books', 'thirty books'], answer: 'twenty books' },
                 { question: 'What are her favorite books about?', options: ['animals and adventure', 'cars and trucks', 'cooking', 'sports'], answer: 'animals and adventure' }
             ]
+        },
+        {
+            passage: "The school organized a field trip to the zoo. All the students were very excited. They saw elephants, giraffes, and lions. The zookeeper gave a special talk about how to care for animals. At the end of the trip, each student got a small toy animal as a souvenir. The teacher said they would write about their favorite animal when they returned to school.",
+            emoji: '🦁',
+            questions: [
+                { question: 'Where did the school go?', options: ['to the zoo', 'to a museum', 'to a farm', 'to an aquarium'], answer: 'to the zoo' },
+                { question: 'Who gave a talk?', options: ['the zookeeper', 'the teacher', 'a student', 'the principal'], answer: 'the zookeeper' },
+                { question: 'What did students get at the end?', options: ['a small toy animal', 'candy', 'a book', 'a t-shirt'], answer: 'a small toy animal' },
+                { question: 'What would they write about at school?', options: ['their favorite animal', 'the bus ride', 'their lunch', 'the weather'], answer: 'their favorite animal' }
+            ]
+        },
+        {
+            passage: "Maria started learning to play the piano three months ago. She practices for twenty minutes every day after school. Her teacher says she is making good progress. Maria's favorite song to play is 'Twinkle Twinkle Little Star'. Next month, she will perform at a small concert for her family and friends.",
+            emoji: '🎹',
+            questions: [
+                { question: 'What instrument does Maria play?', options: ['piano', 'guitar', 'violin', 'drums'], answer: 'piano' },
+                { question: 'How long does she practice?', options: ['twenty minutes', 'thirty minutes', 'one hour', 'ten minutes'], answer: 'twenty minutes' },
+                { question: 'What is her favorite song?', options: ['Twinkle Twinkle Little Star', 'Happy Birthday', 'Mary Had a Little Lamb', 'Old MacDonald'], answer: 'Twinkle Twinkle Little Star' },
+                { question: 'When will she perform?', options: ['next month', 'next week', 'tomorrow', 'next year'], answer: 'next month' }
+            ]
         }
     ],
     hard: [
@@ -187,6 +257,26 @@ const comprehensionDatabase = {
                 { question: 'Where does Jake conduct experiments?', options: ['in his backyard', 'at school', 'in his room', 'at the library'], answer: 'in his backyard' },
                 { question: 'What does Jake measure with a ruler?', options: ['the height of plants', 'the temperature', 'the time', 'the weight'], answer: 'the height of plants' },
                 { question: 'Where does Jake write his observations?', options: ['in a special notebook', 'on his computer', 'on paper', 'in a diary'], answer: 'in a special notebook' }
+            ]
+        },
+        {
+            passage: "Ancient Egypt was one of the greatest civilizations in history. The Egyptians built massive pyramids as tombs for their pharaohs, or kings. These pyramids took many years to construct and required thousands of workers. The Egyptians also invented a form of writing called hieroglyphics, using pictures and symbols. They made paper from papyrus plants that grew along the Nile River. The Nile was very important because it provided water for farming in the desert.",
+            emoji: '🏺',
+            questions: [
+                { question: 'What did Egyptians build as tombs?', options: ['pyramids', 'temples', 'castles', 'towers'], answer: 'pyramids' },
+                { question: 'What was Egyptian writing called?', options: ['hieroglyphics', 'alphabet', 'cuneiform', 'symbols'], answer: 'hieroglyphics' },
+                { question: 'What plant did they use to make paper?', options: ['papyrus', 'bamboo', 'cotton', 'wheat'], answer: 'papyrus' },
+                { question: 'Why was the Nile River important?', options: ['provided water for farming', 'for transportation only', 'for fishing', 'for drinking water'], answer: 'provided water for farming' }
+            ]
+        },
+        {
+            passage: "Climate change is affecting our planet in many ways. As temperatures rise, glaciers and ice caps are melting, causing sea levels to increase. This puts coastal cities at risk of flooding. Weather patterns are becoming more extreme, with stronger hurricanes and longer droughts. Scientists say we need to reduce carbon emissions by using renewable energy like solar and wind power. Everyone can help by recycling, using less electricity, and planting trees.",
+            emoji: '🌍',
+            questions: [
+                { question: 'What happens when glaciers melt?', options: ['sea levels increase', 'temperatures drop', 'rain stops', 'plants grow faster'], answer: 'sea levels increase' },
+                { question: 'What type of energy should we use more?', options: ['renewable energy', 'coal', 'oil', 'gas'], answer: 'renewable energy' },
+                { question: 'What are examples of renewable energy?', options: ['solar and wind power', 'coal and oil', 'gas and wood', 'nuclear only'], answer: 'solar and wind power' },
+                { question: 'What can everyone do to help?', options: ['recycling and planting trees', 'drive more', 'use more electricity', 'throw away more'], answer: 'recycling and planting trees' }
             ]
         }
     ]
@@ -410,6 +500,33 @@ let englishVoice = null;
 let frenchVoice = null;
 let allVoices = [];
 
+// Game mode state
+let currentGameMode = null; // 'prize' or 'tugofwar'
+
+// Tug of War game state
+let towPlayerScore = 0;
+let towComputerScore = 0;
+let towRopePosition = 50; // 0-100, 50 is center
+let towCurrentQuestion = null;
+let towCurrentQuestionType = null;
+let towRoundsToWin = 5;
+let towIsPlayerTurn = true;
+
+// Two Player Tug of War state
+let towOpponentMode = null; // 'computer' or 'player'
+let player1Name = 'Player 1';
+let player1Color = '#667eea';
+let player2Name = 'Player 2';
+let player2Color = '#4caf50';
+let player1Score = 0;
+let player2Score = 0;
+let player1CurrentQuestion = null;
+let player2CurrentQuestion = null;
+let player1QuestionType = null;
+let player2QuestionType = null;
+let twoPlayerRopePosition = 50; // 0-100, 50 is center
+let currentRound = 1;
+
 // DOM Elements
 const readingGame = document.getElementById('reading-game');
 const spellingGame = document.getElementById('spelling-game');
@@ -509,6 +626,64 @@ const frenchEnglishEl = document.getElementById('frenchEnglish');
 const frenchOptionsEl = document.getElementById('frenchOptions');
 const frenchPronounceBtn = document.getElementById('frenchPronounce');
 
+// Mode selection elements
+const modeSelectionEl = document.getElementById('mode-selection');
+const prizeModeCard = document.getElementById('prizeModeCard');
+const tugOfWarModeCard = document.getElementById('tugOfWarModeCard');
+const prizeModeContainer = document.getElementById('prize-mode-container');
+const tugOfWarContainer = document.getElementById('tug-of-war-container');
+
+// Opponent selection elements
+const towOpponentSelectionEl = document.getElementById('tow-opponent-selection');
+const vsComputerCard = document.getElementById('vsComputerCard');
+const vsPlayerCard = document.getElementById('vsPlayerCard');
+const backFromOpponentBtn = document.getElementById('backFromOpponentBtn');
+
+// Player setup elements
+const playerSetupScreen = document.getElementById('player-setup-screen');
+const player1NameInput = document.getElementById('player1Name');
+const player2NameInput = document.getElementById('player2Name');
+const colorPickerBtns = document.querySelectorAll('.color-btn');
+const player1Preview = document.getElementById('player1Preview');
+const player2Preview = document.getElementById('player2Preview');
+const startTwoPlayerGameBtn = document.getElementById('startTwoPlayerGame');
+const backFromSetupBtn = document.getElementById('backFromSetupBtn');
+
+// Tug of War elements (VS Computer)
+const backToMenuBtn = document.getElementById('backToMenuBtn');
+const playerScoreEl = document.getElementById('playerScore');
+const computerScoreEl = document.getElementById('computerScore');
+const ropeCenterEl = document.getElementById('ropeCenter');
+const towFlagEl = document.getElementById('towFlag');
+const towStatusEl = document.getElementById('towStatus');
+const towModeDisplayEl = document.getElementById('towModeDisplay');
+const towQuestionContentEl = document.getElementById('towQuestionContent');
+const towOptionsEl = document.getElementById('towOptions');
+
+// Two Player Tug of War elements
+const twoPlayerTowContainer = document.getElementById('two-player-tow-container');
+const backToMenuBtn2P = document.getElementById('backToMenuBtn2P');
+const player1NameDisplayEl = document.getElementById('player1NameDisplay');
+const player2NameDisplayEl = document.getElementById('player2NameDisplay');
+const player1ScoreDisplayEl = document.getElementById('player1ScoreDisplay');
+const player2ScoreDisplayEl = document.getElementById('player2ScoreDisplay');
+const character1Body = document.getElementById('character1Body');
+const character2Body = document.getElementById('character2Body');
+const towFlag2PEl = document.getElementById('towFlag2P');
+const towStatus2PEl = document.getElementById('towStatus2P');
+const player1Panel = document.getElementById('player1Panel');
+const player2Panel = document.getElementById('player2Panel');
+const player1Header = document.getElementById('player1Header');
+const player2Header = document.getElementById('player2Header');
+const towModeDisplay1El = document.getElementById('towModeDisplay1');
+const towModeDisplay2El = document.getElementById('towModeDisplay2');
+const towQuestionContent1El = document.getElementById('towQuestionContent1');
+const towQuestionContent2El = document.getElementById('towQuestionContent2');
+const towOptions1El = document.getElementById('towOptions1');
+const towOptions2El = document.getElementById('towOptions2');
+const feedback1El = document.getElementById('feedback1');
+const feedback2El = document.getElementById('feedback2');
+
 // Load available voices
 function loadVoices() {
     allVoices = window.speechSynthesis.getVoices();
@@ -535,8 +710,10 @@ function loadVoices() {
 function init() {
     loadVoices();
     createLetterButtons();
-    loadNewWord();
     setupEventListeners();
+    
+    // Show mode selection screen initially
+    showModeSelection();
     
     // Voices may load asynchronously
     if (window.speechSynthesis.onvoiceschanged !== undefined) {
@@ -544,8 +721,190 @@ function init() {
     }
 }
 
+// Show mode selection screen
+function showModeSelection() {
+    modeSelectionEl.classList.remove('hidden');
+    prizeModeContainer.classList.add('hidden');
+    tugOfWarContainer.classList.add('hidden');
+    twoPlayerTowContainer.classList.add('hidden');
+    towOpponentSelectionEl.classList.add('hidden');
+    playerSetupScreen.classList.add('hidden');
+    currentGameMode = null;
+}
+
+// Show opponent selection screen
+function showOpponentSelection() {
+    modeSelectionEl.classList.add('hidden');
+    towOpponentSelectionEl.classList.remove('hidden');
+    playerSetupScreen.classList.add('hidden');
+}
+
+// Show player setup screen
+function showPlayerSetup() {
+    towOpponentSelectionEl.classList.add('hidden');
+    playerSetupScreen.classList.remove('hidden');
+    // Reset to default values
+    player1NameInput.value = player1Name;
+    player2NameInput.value = player2Name;
+    updatePlayerPreviews();
+}
+
+// Update player character previews
+function updatePlayerPreviews() {
+    if (player1Preview) {
+        player1Preview.style.backgroundColor = player1Color;
+    }
+    if (player2Preview) {
+        player2Preview.style.backgroundColor = player2Color;
+    }
+}
+
+// Start Prize Mode
+function startPrizeMode() {
+    console.log('Starting Prize Mode...');
+    currentGameMode = 'prize';
+    modeSelectionEl.classList.add('hidden');
+    prizeModeContainer.classList.remove('hidden');
+    tugOfWarContainer.classList.add('hidden');
+    twoPlayerTowContainer.classList.add('hidden');
+    loadNewWord();
+}
+
+// Start Tug of War Mode - directly start computer mode
+function startTugOfWarMode() {
+    console.log('Starting Tug of War Mode...');
+    currentGameMode = 'tugofwar';
+    modeSelectionEl.classList.add('hidden');
+    prizeModeContainer.classList.add('hidden');
+    tugOfWarContainer.classList.remove('hidden');
+    initializeTugOfWar();
+}
+
+// Start Tug of War VS Computer
+function startTugOfWarVsComputer() {
+    towOpponentMode = 'computer';
+    towOpponentSelectionEl.classList.add('hidden');
+    modeSelectionEl.classList.add('hidden');
+    prizeModeContainer.classList.add('hidden');
+    tugOfWarContainer.classList.remove('hidden');
+    twoPlayerTowContainer.classList.add('hidden');
+    initializeTugOfWar();
+}
+
+// Start Tug of War VS Player
+function startTugOfWarVsPlayer() {
+    towOpponentMode = 'player';
+    // Get player names
+    player1Name = player1NameInput.value.trim() || 'Player 1';
+    player2Name = player2NameInput.value.trim() || 'Player 2';
+    
+    playerSetupScreen.classList.add('hidden');
+    modeSelectionEl.classList.add('hidden');
+    prizeModeContainer.classList.add('hidden');
+    tugOfWarContainer.classList.add('hidden');
+    twoPlayerTowContainer.classList.remove('hidden');
+    
+    initializeTwoPlayerTugOfWar();
+}
+
 // Setup event listeners
 function setupEventListeners() {
+    // Mode selection
+    console.log('Setting up event listeners...');
+    console.log('prizeModeCard:', prizeModeCard);
+    console.log('tugOfWarModeCard:', tugOfWarModeCard);
+    
+    if (prizeModeCard) {
+        const prizeBtn = prizeModeCard.querySelector('.mode-select-btn');
+        console.log('Prize button:', prizeBtn);
+        if (prizeBtn) {
+            prizeBtn.addEventListener('click', startPrizeMode);
+        }
+    }
+    
+    if (tugOfWarModeCard) {
+        const towBtn = tugOfWarModeCard.querySelector('.mode-select-btn');
+        console.log('Tug of War button:', towBtn);
+        if (towBtn) {
+            towBtn.addEventListener('click', startTugOfWarMode);
+        }
+    }
+    
+    if (backToMenuBtn) {
+        backToMenuBtn.addEventListener('click', showModeSelection);
+    }
+    if (backToMenuBtn2P) {
+        backToMenuBtn2P.addEventListener('click', showModeSelection);
+    }
+    
+    // Opponent selection
+    if (vsComputerCard) {
+        const vsComputerBtn = vsComputerCard.querySelector('.opponent-select-btn');
+        if (vsComputerBtn) {
+            vsComputerBtn.addEventListener('click', startTugOfWarVsComputer);
+        }
+    }
+    
+    if (vsPlayerCard) {
+        const vsPlayerBtn = vsPlayerCard.querySelector('.opponent-select-btn');
+        if (vsPlayerBtn) {
+            vsPlayerBtn.addEventListener('click', showPlayerSetup);
+        }
+    }
+    
+    if (backFromOpponentBtn) {
+        backFromOpponentBtn.addEventListener('click', showModeSelection);
+    }
+    
+    // Player setup
+    if (backFromSetupBtn) {
+        backFromSetupBtn.addEventListener('click', showOpponentSelection);
+    }
+    if (startTwoPlayerGameBtn) {
+        startTwoPlayerGameBtn.addEventListener('click', startTugOfWarVsPlayer);
+    }
+    
+    // Also add click handlers directly to the cards as a fallback
+    if (prizeModeCard) {
+        prizeModeCard.addEventListener('click', (e) => {
+            console.log('Prize Mode card clicked');
+            if (e.target.classList.contains('mode-select-btn') || e.target.closest('.mode-select-btn')) {
+                startPrizeMode();
+            }
+        });
+    }
+    
+    if (tugOfWarModeCard) {
+        tugOfWarModeCard.addEventListener('click', (e) => {
+            console.log('Tug of War card clicked');
+            if (e.target.classList.contains('mode-select-btn') || e.target.closest('.mode-select-btn')) {
+                startTugOfWarMode();
+            }
+        });
+    }
+    
+    // Color picker buttons
+    colorPickerBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const player = this.getAttribute('data-player');
+            const color = this.getAttribute('data-color');
+            
+            if (player === '1') {
+                player1Color = color;
+                // Update active state
+                document.querySelectorAll('[data-player="1"]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            } else if (player === '2') {
+                player2Color = color;
+                // Update active state
+                document.querySelectorAll('[data-player="2"]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            }
+            
+            updatePlayerPreviews();
+        });
+    });
+    
     // Subject switching
     englishSubjectBtn.addEventListener('click', () => switchSubject('english'));
     mathSubjectBtn.addEventListener('click', () => switchSubject('math'));
@@ -2137,6 +2496,562 @@ function updateScoreDisplay() {
     streakEl.textContent = streak;
     levelEl.textContent = level;
     starsEl.textContent = stars;
+}
+
+// ========================================
+// TUG OF WAR GAME FUNCTIONS
+// ========================================
+
+// Initialize Tug of War game
+function initializeTugOfWar() {
+    towPlayerScore = 0;
+    towComputerScore = 0;
+    towRopePosition = 50;
+    updateTugOfWarDisplay();
+    loadTugOfWarQuestion();
+}
+
+// Get random question from any English mode
+function getTugOfWarQuestion() {
+    const questionTypes = ['reading', 'spelling', 'sentence', 'comprehension', 'rhyming'];
+    const randomType = questionTypes[Math.floor(Math.random() * questionTypes.length)];
+    
+    towCurrentQuestionType = randomType;
+    
+    switch(randomType) {
+        case 'reading':
+            return {
+                type: 'reading',
+                data: getRandomWord(),
+                displayName: '📖 Reading'
+            };
+        case 'spelling':
+            return {
+                type: 'spelling',
+                data: getRandomWord(),
+                displayName: '✏️ Spelling'
+            };
+        case 'sentence':
+            return {
+                type: 'sentence',
+                data: getRandomSentence(),
+                displayName: '📝 Sentence Building'
+            };
+        case 'comprehension':
+            const comprehension = getRandomComprehension();
+            const randomQuestion = comprehension.questions[Math.floor(Math.random() * comprehension.questions.length)];
+            return {
+                type: 'comprehension',
+                data: {
+                    emoji: comprehension.emoji,
+                    passage: comprehension.passage,
+                    question: randomQuestion.question,
+                    options: randomQuestion.options,
+                    answer: randomQuestion.answer
+                },
+                displayName: '📚 Comprehension'
+            };
+        case 'rhyming':
+            return {
+                type: 'rhyming',
+                data: getRandomRhymingWord(),
+                displayName: '🎵 Rhyming'
+            };
+    }
+}
+
+// Load Tug of War question
+function loadTugOfWarQuestion() {
+    towCurrentQuestion = getTugOfWarQuestion();
+    towModeDisplayEl.textContent = towCurrentQuestion.displayName;
+    
+    // Clear previous content
+    towQuestionContentEl.innerHTML = '';
+    towOptionsEl.innerHTML = '';
+    
+    switch(towCurrentQuestion.type) {
+        case 'reading':
+            loadTowReading();
+            break;
+        case 'spelling':
+            loadTowSpelling();
+            break;
+        case 'sentence':
+            loadTowSentence();
+            break;
+        case 'comprehension':
+            loadTowComprehension();
+            break;
+        case 'rhyming':
+            loadTowRhyming();
+            break;
+    }
+}
+
+// Load Tug of War Reading question
+function loadTowReading() {
+    const word = towCurrentQuestion.data;
+    towQuestionContentEl.innerHTML = `
+        <div class="tow-word-display">
+            <div class="tow-emoji">${word.emoji}</div>
+            <p class="tow-question-text">What does this word say?</p>
+        </div>
+    `;
+    
+    const shuffledOptions = [...word.options].sort(() => Math.random() - 0.5);
+    shuffledOptions.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkTowAnswer(option === word.word, btn));
+        towOptionsEl.appendChild(btn);
+    });
+}
+
+// Load Tug of War Spelling question
+function loadTowSpelling() {
+    const word = towCurrentQuestion.data;
+    towQuestionContentEl.innerHTML = `
+        <div class="tow-word-display">
+            <div class="tow-emoji">${word.emoji}</div>
+            <p class="tow-question-text">How do you spell this?</p>
+        </div>
+    `;
+    
+    const shuffledOptions = [...word.options].sort(() => Math.random() - 0.5);
+    shuffledOptions.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkTowAnswer(option === word.word, btn));
+        towOptionsEl.appendChild(btn);
+    });
+}
+
+// Load Tug of War Sentence question
+function loadTowSentence() {
+    const sentence = towCurrentQuestion.data;
+    const shuffledWords = [...sentence.words].sort(() => Math.random() - 0.5);
+    let selectedWords = [];
+    
+    towQuestionContentEl.innerHTML = `
+        <div class="tow-word-display">
+            <div class="tow-emoji">${sentence.emoji}</div>
+            <p class="tow-question-text">Build the sentence:</p>
+            <div class="tow-sentence-display" id="towSentenceDisplay"></div>
+        </div>
+    `;
+    
+    shuffledWords.forEach(word => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn tow-word-btn';
+        btn.textContent = word;
+        btn.addEventListener('click', () => {
+            selectedWords.push(word);
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+            document.getElementById('towSentenceDisplay').textContent = selectedWords.join(' ');
+            
+            if (selectedWords.length === sentence.words.length) {
+                setTimeout(() => {
+                    checkTowAnswer(selectedWords.join(' ') === sentence.sentence, btn);
+                }, 500);
+            }
+        });
+        towOptionsEl.appendChild(btn);
+    });
+}
+
+// Load Tug of War Comprehension question
+function loadTowComprehension() {
+    const comprehensionData = towCurrentQuestion.data;
+    towQuestionContentEl.innerHTML = `
+        <div class="tow-word-display">
+            <div class="tow-emoji">${comprehensionData.emoji}</div>
+            <p class="tow-sentence-text">${comprehensionData.passage}</p>
+            <p class="tow-question-text">${comprehensionData.question}</p>
+        </div>
+    `;
+    
+    const shuffledOptions = [...comprehensionData.options].sort(() => Math.random() - 0.5);
+    shuffledOptions.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkTowAnswer(option === comprehensionData.answer, btn));
+        towOptionsEl.appendChild(btn);
+    });
+}
+
+// Load Tug of War Rhyming question
+function loadTowRhyming() {
+    const word = towCurrentQuestion.data;
+    towQuestionContentEl.innerHTML = `
+        <div class="tow-word-display">
+            <p class="tow-question-text">Which word rhymes with:</p>
+            <div class="tow-target-word">${word.word}</div>
+        </div>
+    `;
+    
+    // Mix rhyming and non-rhyming words
+    const allOptions = [...word.rhymes.slice(0, 2), ...word.nonRhymes.slice(0, 2)];
+    const shuffledOptions = allOptions.sort(() => Math.random() - 0.5);
+    
+    shuffledOptions.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkTowAnswer(word.rhymes.includes(option), btn));
+        towOptionsEl.appendChild(btn);
+    });
+}
+
+// Check Tug of War answer
+function checkTowAnswer(isCorrect, btn) {
+    const buttons = towOptionsEl.querySelectorAll('.tow-option-btn');
+    buttons.forEach(b => b.disabled = true);
+    
+    if (isCorrect) {
+        btn.classList.add('correct');
+        towPlayerScore++;
+        towRopePosition += 10; // Player pulls rope
+        towStatusEl.textContent = '🎉 Correct! You pulled the rope!';
+        towStatusEl.style.color = '#4caf50';
+    } else {
+        btn.classList.add('incorrect');
+        towStatusEl.textContent = '💪 Computer wins this round!';
+        towStatusEl.style.color = '#f44336';
+        
+        // Computer gets a turn (automatic win for this round)
+        setTimeout(() => {
+            towComputerScore++;
+            towRopePosition -= 10; // Computer pulls rope
+            updateTugOfWarDisplay();
+        }, 1000);
+    }
+    
+    updateTugOfWarDisplay();
+    
+    // Check for game over
+    setTimeout(() => {
+        if (towPlayerScore >= towRoundsToWin) {
+            showTowGameOver(true);
+        } else if (towComputerScore >= towRoundsToWin) {
+            showTowGameOver(false);
+        } else {
+            loadTugOfWarQuestion();
+        }
+    }, 2000);
+}
+
+// Update Tug of War display
+function updateTugOfWarDisplay() {
+    playerScoreEl.textContent = towPlayerScore;
+    computerScoreEl.textContent = towComputerScore;
+    
+    // Update rope position (flag position)
+    towFlagEl.style.left = `${towRopePosition}%`;
+    
+    // Update rope color based on who's winning
+    if (towRopePosition > 60) {
+        towFlagEl.style.color = '#4caf50'; // Player winning
+    } else if (towRopePosition < 40) {
+        towFlagEl.style.color = '#f44336'; // Computer winning
+    } else {
+        towFlagEl.style.color = '#ffd700'; // Neutral
+    }
+}
+
+// Show Tug of War game over
+function showTowGameOver(playerWon) {
+    towQuestionContentEl.innerHTML = `
+        <div class="tow-game-over">
+            <h2>${playerWon ? '🎉 YOU WON!' : '😢 Computer Won!'}</h2>
+            <p>${playerWon ? 'Amazing job, Aiden! You pulled the rope all the way!' : 'Don\'t worry! Try again and you\'ll win!'}</p>
+            <button class="tow-replay-btn" id="towReplayBtn">Play Again 🔄</button>
+        </div>
+    `;
+    towOptionsEl.innerHTML = '';
+    towStatusEl.textContent = playerWon ? 'Victory! 🏆' : 'Keep practicing! 💪';
+    
+    document.getElementById('towReplayBtn').addEventListener('click', initializeTugOfWar);
+}
+
+// ============================================
+// TWO PLAYER TUG OF WAR FUNCTIONS
+// ============================================
+
+// Initialize Two Player Tug of War
+function initializeTwoPlayerTugOfWar() {
+    // Reset game state
+    player1Score = 0;
+    player2Score = 0;
+    twoPlayerRopePosition = 50;
+    currentRound = 1;
+    player1CurrentQuestion = null;
+    player2CurrentQuestion = null;
+    
+    // Update display
+    player1NameDisplayEl.textContent = player1Name;
+    player2NameDisplayEl.textContent = player2Name;
+    player1ScoreDisplayEl.textContent = '0';
+    player2ScoreDisplayEl.textContent = '0';
+    
+    // Apply player colors to headers
+    player1Header.style.backgroundColor = player1Color;
+    player2Header.style.backgroundColor = player2Color;
+    
+    // Update character colors
+    character1Body.style.color = player1Color;
+    character2Body.style.color = player2Color;
+    
+    // Load initial questions for both players
+    loadTwoPlayerQuestions();
+}
+
+// Load questions for both players simultaneously
+function loadTwoPlayerQuestions() {
+    // Clear previous feedback
+    feedback1El.textContent = '';
+    feedback2El.textContent = '';
+    feedback1El.className = 'answer-feedback';
+    feedback2El.className = 'answer-feedback';
+    
+    // Get random question types for each player
+    player1CurrentQuestion = getTugOfWarQuestion();
+    player2CurrentQuestion = getTugOfWarQuestion();
+    
+    player1QuestionType = player1CurrentQuestion.type;
+    player2QuestionType = player2CurrentQuestion.type;
+    
+    // Load questions based on type
+    loadPlayerQuestion(1, player1CurrentQuestion);
+    loadPlayerQuestion(2, player2CurrentQuestion);
+    
+    updateTwoPlayerDisplay();
+}
+
+// Load question for a specific player
+function loadPlayerQuestion(playerNum, questionData) {
+    const modeDisplayEl = playerNum === 1 ? towModeDisplay1El : towModeDisplay2El;
+    const questionContentEl = playerNum === 1 ? towQuestionContent1El : towQuestionContent2El;
+    const optionsEl = playerNum === 1 ? towOptions1El : towOptions2El;
+    
+    // Update mode display
+    const modeNames = {
+        'reading': 'Reading Mode',
+        'spelling': 'Spelling Mode',
+        'sentence': 'Sentence Mode',
+        'comprehension': 'Comprehension Mode',
+        'rhyming': 'Rhyming Mode'
+    };
+    modeDisplayEl.textContent = modeNames[questionData.type] || 'Challenge Mode';
+    
+    // Load content based on type
+    switch (questionData.type) {
+        case 'reading':
+            loadPlayerReading(playerNum, questionData, questionContentEl, optionsEl);
+            break;
+        case 'spelling':
+            loadPlayerSpelling(playerNum, questionData, questionContentEl, optionsEl);
+            break;
+        case 'sentence':
+            loadPlayerSentence(playerNum, questionData, questionContentEl, optionsEl);
+            break;
+        case 'comprehension':
+            loadPlayerComprehension(playerNum, questionData, questionContentEl, optionsEl);
+            break;
+        case 'rhyming':
+            loadPlayerRhyming(playerNum, questionData, questionContentEl, optionsEl);
+            break;
+    }
+}
+
+// Load reading question for player
+function loadPlayerReading(playerNum, questionData, contentEl, optionsEl) {
+    contentEl.innerHTML = `
+        <div class="tow-emoji">${questionData.data.emoji}</div>
+        <p class="tow-question">Which word matches this picture?</p>
+    `;
+    
+    optionsEl.innerHTML = '';
+    questionData.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkPlayerAnswer(playerNum, option, questionData.correct));
+        optionsEl.appendChild(btn);
+    });
+}
+
+// Load spelling question for player
+function loadPlayerSpelling(playerNum, questionData, contentEl, optionsEl) {
+    contentEl.innerHTML = `
+        <div class="tow-emoji">${questionData.data.emoji}</div>
+        <p class="tow-question">Spell the word for this picture!</p>
+    `;
+    
+    optionsEl.innerHTML = '';
+    questionData.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkPlayerAnswer(playerNum, option, questionData.correct));
+        optionsEl.appendChild(btn);
+    });
+}
+
+// Load sentence question for player
+function loadPlayerSentence(playerNum, questionData, contentEl, optionsEl) {
+    contentEl.innerHTML = `
+        <p class="tow-question">${questionData.data.sentence}</p>
+        <p class="tow-question-sub">Choose the missing word:</p>
+    `;
+    
+    optionsEl.innerHTML = '';
+    questionData.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkPlayerAnswer(playerNum, option, questionData.correct));
+        optionsEl.appendChild(btn);
+    });
+}
+
+// Load comprehension question for player
+function loadPlayerComprehension(playerNum, questionData, contentEl, optionsEl) {
+    contentEl.innerHTML = `
+        <p class="tow-story">${questionData.data.story}</p>
+        <p class="tow-question">${questionData.data.question}</p>
+    `;
+    
+    optionsEl.innerHTML = '';
+    questionData.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkPlayerAnswer(playerNum, option, questionData.correct));
+        optionsEl.appendChild(btn);
+    });
+}
+
+// Load rhyming question for player
+function loadPlayerRhyming(playerNum, questionData, contentEl, optionsEl) {
+    contentEl.innerHTML = `
+        <p class="tow-question">Which word rhymes with:</p>
+        <p class="tow-target-word">${questionData.data.targetWord}</p>
+    `;
+    
+    optionsEl.innerHTML = '';
+    questionData.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'tow-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkPlayerAnswer(playerNum, option, questionData.correct));
+        optionsEl.appendChild(btn);
+    });
+}
+
+// Check player answer
+function checkPlayerAnswer(playerNum, answer, correctAnswer) {
+    const feedbackEl = playerNum === 1 ? feedback1El : feedback2El;
+    const optionsEl = playerNum === 1 ? towOptions1El : towOptions2El;
+    
+    // Disable all buttons for this player
+    optionsEl.querySelectorAll('.tow-option-btn').forEach(btn => {
+        btn.disabled = true;
+    });
+    
+    const isCorrect = answer.toLowerCase() === correctAnswer.toLowerCase();
+    
+    if (isCorrect) {
+        feedbackEl.textContent = '✓ Correct!';
+        feedbackEl.className = 'answer-feedback correct';
+        
+        // Update score and rope position
+        if (playerNum === 1) {
+            player1Score++;
+            twoPlayerRopePosition = Math.min(100, twoPlayerRopePosition + 10);
+        } else {
+            player2Score++;
+            twoPlayerRopePosition = Math.max(0, twoPlayerRopePosition - 10);
+        }
+        
+        updateTwoPlayerDisplay();
+        
+        // Check for win condition
+        setTimeout(() => {
+            if (player1Score >= towRoundsToWin || player2Score >= towRoundsToWin) {
+                showTwoPlayerGameOver();
+            } else if (twoPlayerRopePosition >= 100 || twoPlayerRopePosition <= 0) {
+                showTwoPlayerGameOver();
+            } else {
+                currentRound++;
+                loadTwoPlayerQuestions();
+            }
+        }, 1500);
+    } else {
+        feedbackEl.textContent = '✗ Wrong';
+        feedbackEl.className = 'answer-feedback incorrect';
+        
+        // Wait for both players to answer before loading next question
+        setTimeout(() => {
+            const otherFeedback = playerNum === 1 ? feedback2El : feedback1El;
+            if (otherFeedback.textContent !== '') {
+                // Both answered, load next round
+                currentRound++;
+                loadTwoPlayerQuestions();
+            }
+        }, 1500);
+    }
+}
+
+// Update two player display
+function updateTwoPlayerDisplay() {
+    player1ScoreDisplayEl.textContent = player1Score;
+    player2ScoreDisplayEl.textContent = player2Score;
+    
+    // Update rope position (flag position)
+    towFlag2PEl.style.left = `${twoPlayerRopePosition}%`;
+    
+    // Update rope color based on who's winning
+    if (twoPlayerRopePosition > 60) {
+        towFlag2PEl.style.color = player1Color;
+    } else if (twoPlayerRopePosition < 40) {
+        towFlag2PEl.style.color = player2Color;
+    } else {
+        towFlag2PEl.style.color = '#ffd700'; // Neutral
+    }
+    
+    // Update status
+    towStatus2PEl.textContent = `Round ${currentRound} - First to ${towRoundsToWin} wins!`;
+}
+
+// Show two player game over
+function showTwoPlayerGameOver() {
+    const player1Won = player1Score >= towRoundsToWin || twoPlayerRopePosition >= 100;
+    const player2Won = player2Score >= towRoundsToWin || twoPlayerRopePosition <= 0;
+    
+    const winnerName = player1Won ? player1Name : player2Name;
+    const winnerColor = player1Won ? player1Color : player2Color;
+    
+    towQuestionContent1El.innerHTML = `
+        <div class="tow-game-over">
+            <h2 style="color: ${winnerColor}">🎉 ${winnerName} WINS!</h2>
+            <p>Final Score: ${player1Name} ${player1Score} - ${player2Score} ${player2Name}</p>
+            <button class="tow-replay-btn" id="towReplay2PBtn">Play Again 🔄</button>
+        </div>
+    `;
+    
+    towQuestionContent2El.innerHTML = '';
+    towOptions1El.innerHTML = '';
+    towOptions2El.innerHTML = '';
+    feedback1El.textContent = '';
+    feedback2El.textContent = '';
+    
+    towStatus2PEl.textContent = `${winnerName} is the champion! 🏆`;
+    
+    document.getElementById('towReplay2PBtn').addEventListener('click', initializeTwoPlayerTugOfWar);
 }
 
 // Register service worker for PWA

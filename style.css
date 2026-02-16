@@ -1213,3 +1213,810 @@ body {
     display: flex;
 }
 
+/* ========================================
+   MODE SELECTION SCREEN
+   ======================================== */
+
+.mode-selection-screen {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.mode-selection-title {
+    font-size: 2em;
+    color: #667eea;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mode-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.mode-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
+}
+
+.mode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mode-icon {
+    font-size: 5em;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.mode-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mode-card p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.mode-select-btn {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mode-select-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ========================================
+   TUG OF WAR STYLES
+   ======================================== */
+
+.tow-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+.tow-title {
+    font-size: 2em;
+    color: #667eea;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tow-scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tow-player {
+    text-align: center;
+}
+
+.player-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.player-score {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+    background: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tow-vs {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #764ba2;
+}
+
+.tow-rope-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tow-marker {
+    font-size: 2em;
+}
+
+.tow-rope {
+    flex: 1;
+    height: 20px;
+    background: linear-gradient(to right, #8b4513, #d2691e);
+    border-radius: 10px;
+    margin: 0 20px;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tow-rope-center {
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    width: 3px;
+    height: 50px;
+    background: #333;
+    transform: translateX(-50%);
+}
+
+.tow-flag {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    font-size: 2em;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.tow-progress {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tow-status {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #667eea;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tow-question-area {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tow-mode-display {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #764ba2;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+}
+
+.tow-question-content {
+    margin-bottom: 25px;
+}
+
+.tow-word-display {
+    text-align: center;
+}
+
+.tow-emoji {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.tow-question-text {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.tow-sentence-text {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 15px;
+    line-height: 1.6;
+}
+
+.tow-target-word {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 20px;
+}
+
+.tow-sentence-display {
+    font-size: 1.3em;
+    min-height: 50px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.tow-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.tow-option-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tow-option-btn:hover:not(:disabled) {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tow-option-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.tow-option-btn.correct {
+    background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+    animation: pulse 0.5s;
+}
+
+.tow-option-btn.incorrect {
+    background: linear-gradient(135deg, #f44336 0%, #e57373 100%);
+    animation: shake 0.5s;
+}
+
+.tow-game-over {
+    text-align: center;
+    padding: 40px;
+}
+
+.tow-game-over h2 {
+    font-size: 3em;
+    color: #667eea;
+    margin-bottom: 20px;
+    animation: bounce 1s;
+}
+
+.tow-game-over p {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.tow-replay-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 25px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tow-replay-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   OPPONENT SELECTION SCREEN
+   ============================================ */
+
+#tow-opponent-selection {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#tow-opponent-selection h2 {
+    text-align: center;
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.opponent-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.opponent-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.opponent-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.opponent-card:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.opponent-icon {
+    font-size: 6em;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.opponent-card h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.opponent-card p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.opponent-select-btn {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.opponent-select-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   PLAYER SETUP SCREEN
+   ============================================ */
+
+#player-setup-screen {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#player-setup-screen h2 {
+    text-align: center;
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.player-setup-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.player-setup-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.player-setup-card h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #667eea;
+}
+
+.setup-section {
+    margin-bottom: 25px;
+}
+
+.setup-section label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.name-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: border-color 0.3s ease;
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.color-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.color-btn {
+    width: 100%;
+    height: 60px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+.color-btn.active {
+    border-color: #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.character-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.preview-character {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-game-btn {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.start-game-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   TWO PLAYER TUG OF WAR
+   ============================================ */
+
+#two-player-tow-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.two-player-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Central Tug of War Area */
+.central-tow-area {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tow-scoreboard-2p {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.tow-player-2p {
+    text-align: center;
+}
+
+.player-name-2p {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.player-score-2p {
+    font-size: 3em;
+    font-weight: bold;
+    background: white;
+    color: #667eea;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Character Tug of War Animation */
+.tow-characters-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    position: relative;
+}
+
+.tow-character {
+    font-size: 5em;
+    animation: pull 1s ease-in-out infinite alternate;
+}
+
+.tow-character-left {
+    animation-delay: 0s;
+}
+
+.tow-character-right {
+    animation-delay: 0.5s;
+    transform: scaleX(-1);
+}
+
+.character-body {
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes pull {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.tow-character-right {
+    animation-name: pullRight;
+}
+
+@keyframes pullRight {
+    0% {
+        transform: scaleX(-1) translateX(0);
+    }
+    100% {
+        transform: scaleX(-1) translateX(-10px);
+    }
+}
+
+.tow-rope-2p {
+    flex: 1;
+    height: 30px;
+    background: linear-gradient(to right, #8b4513 0%, #d2691e 50%, #8b4513 100%);
+    border-radius: 15px;
+    margin: 0 30px;
+    position: relative;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tow-rope-center-2p {
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    bottom: -5px;
+    width: 4px;
+    background: white;
+    transform: translateX(-50%);
+}
+
+.tow-flag-2p {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    transition: left 0.5s ease;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Split Screen Question Panels */
+.split-question-container {
+    display: grid;
+    grid-template-columns: 1fr 4px 1fr;
+    gap: 20px;
+    min-height: 500px;
+}
+
+.player-question-panel {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.round-indicator {
+    margin-top: 10px;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.player-divider {
+    background: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.answer-feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.answer-feedback.correct {
+    background: #4caf50;
+    color: white;
+}
+
+.answer-feedback.incorrect {
+    background: #f44336;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mode-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .opponent-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-setup-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .split-question-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-divider {
+        height: 4px;
+        width: 100%;
+        background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+    }
+    
+    .tow-scoreboard {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .tow-vs {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .tow-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .tow-characters-container {
+        font-size: 0.6em;
+    }
+}
+
