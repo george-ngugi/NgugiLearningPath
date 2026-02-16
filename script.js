@@ -2247,19 +2247,19 @@ function playSuccessAudio() {
         
         if (currentMode === 'reading') {
             const word = readingType === 'word' ? currentWord.word : currentReadingSentence.sentence;
-            text = `${word}. ${affirmation}, Aiden`;
+            text = `${word}. ${affirmation}`;
         } else if (currentMode === 'spelling') {
-            text = `${currentWord.word}. ${affirmation}, Aiden`;
+            text = `${currentWord.word}. ${affirmation}`;
         } else if (currentMode === 'comprehension') {
             const currentQuestion = currentComprehension.questions[currentComprehensionQuestionIndex - 1];
             const answer = currentQuestion ? currentQuestion.answer : '';
-            text = `${answer}. ${affirmation}, Aiden`;
+            text = `${answer}. ${affirmation}`;
         } else if (currentMode === 'addition' || currentMode === 'subtraction' || currentMode === 'multiplication') {
-            text = `The answer is ${currentMathProblem.answer}. ${affirmation}, Aiden`;
+            text = `The answer is ${currentMathProblem.answer}. ${affirmation}`;
         } else if (currentMode === 'counting') {
-            text = `There are ${currentMathProblem.count}. ${affirmation}, Aiden`;
+            text = `There are ${currentMathProblem.count}. ${affirmation}`;
         } else if (currentMode === 'words' || currentMode === 'numbers' || currentMode === 'colors' || currentMode === 'phrases' || currentMode === 'days') {
-            text = `${currentFrenchItem.french}. ${affirmation}, Aiden`;
+            text = `${currentFrenchItem.french}. ${affirmation}`;
             lang = 'fr-FR';
         }
         
@@ -2767,7 +2767,7 @@ function showTowGameOver(playerWon) {
     towQuestionContentEl.innerHTML = `
         <div class="tow-game-over">
             <h2>${playerWon ? '🎉 YOU WON!' : '😢 Computer Won!'}</h2>
-            <p>${playerWon ? 'Amazing job, Aiden! You pulled the rope all the way!' : 'Don\'t worry! Try again and you\'ll win!'}</p>
+            <p>${playerWon ? 'Amazing job! You pulled the rope all the way!' : 'Don\'t worry! Try again and you\'ll win!'}</p>
             <button class="tow-replay-btn" id="towReplayBtn">Play Again 🔄</button>
         </div>
     `;
