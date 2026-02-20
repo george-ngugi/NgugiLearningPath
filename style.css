@@ -1071,6 +1071,175 @@ body {
     }
 }
 
+/* Digraphs Mode Styles */
+.digraphs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.digraphs-lesson {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.digraphs-lesson h3 {
+    color: #2d3436;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.lesson-text {
+    font-size: 1.2em;
+    color: #2d3436;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lesson-text strong {
+    color: #6c5ce7;
+    font-size: 1.1em;
+}
+
+.digraph-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.digraph-example-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.digraph-example-card:hover {
+    transform: translateY(-5px);
+}
+
+.digraph-letters {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.digraph-example-word {
+    font-size: 1.3em;
+    color: #2d3436;
+}
+
+.digraphs-question-section {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.digraphs-question-section h3 {
+    color: #d63031;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.digraph-word-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.digraph-word {
+    font-size: 3em;
+    font-weight: bold;
+    color: #2d3436;
+    background: white;
+    padding: 25px 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.digraph-emoji {
+    font-size: 4em;
+}
+
+.digraph-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.digraph-option-btn {
+    padding: 20px 30px;
+    font-size: 2em;
+    font-weight: bold;
+    background: white;
+    border: 4px solid #dfe6e9;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2d3436;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.digraph-option-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: #667eea;
+}
+
+.digraph-option-btn.correct {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    color: white;
+    border-color: #00b894;
+    animation: bounce 0.5s ease;
+}
+
+.digraph-option-btn.incorrect {
+    background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+    color: white;
+    border-color: #d63031;
+    animation: shake 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .digraph-examples {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .digraph-word {
+        font-size: 2em;
+        padding: 20px 30px;
+    }
+    
+    .digraph-emoji {
+        font-size: 3em;
+    }
+    
+    .digraph-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .digraph-option-btn {
+        font-size: 1.5em;
+        padding: 15px 20px;
+    }
+}
+
 /* Math Game Styles */
 #math-game {
     display: none;
@@ -1209,8 +1378,791 @@ body {
     display: none;
 }
 
-#french-modes:not(.hidden), #math-modes:not(.hidden) {
+#french-modes:not(.hidden), #math-modes:not(.hidden), #music-modes:not(.hidden) {
     display: flex;
+}
+
+/* ========================================
+   MUSIC GAME STYLES
+   ======================================== */
+
+.music-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.music-title {
+    font-size: 1.8em;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Piano Keyboard Styles */
+.piano-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.current-note-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-note {
+    font-size: 2em;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+.piano-keyboard {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 300px;
+    background: #222;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.piano-key {
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+    gap: 5px;
+}
+
+.piano-key:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+}
+
+.piano-key:active {
+    transform: translateY(2px);
+    filter: brightness(0.9);
+}
+
+.white-key {
+    width: 13.5%;
+    height: 85%;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+    border: 2px solid #333;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.white-key:nth-child(1) { left: 1%; }
+.white-key:nth-child(2) { left: 15%; }
+.white-key:nth-child(3) { left: 29%; }
+.white-key:nth-child(4) { left: 43%; }
+.white-key:nth-child(5) { left: 57%; }
+.white-key:nth-child(6) { left: 71%; }
+.white-key:nth-child(7) { left: 85%; }
+
+.black-key {
+    width: 8%;
+    height: 55%;
+    background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+    border: 1px solid #000;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.key-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: inherit;
+}
+
+.white-key .key-label {
+    color: #333;
+}
+
+.key-name {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+}
+
+.piano-key.playing {
+    background: linear-gradient(180deg, #ffd700 0%, #ffed4e 100%);
+    transform: translateY(2px);
+}
+
+.piano-practice {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.piano-practice h4 {
+    color: #667eea;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.instruction-text {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#targetNoteText {
+    color: #f5576c;
+    font-size: 1.3em;
+}
+
+.practice-feedback {
+    min-height: 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Detailed Key Information Section */
+.key-details-section {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.key-details-section h3 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+.key-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.key-select-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    min-width: 50px;
+}
+
+.key-select-btn.black {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.key-select-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.key-select-btn.active {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+}
+
+.key-select-btn.black.active {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.key-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.key-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+}
+
+.key-info-note {
+    font-size: 3.5em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.key-info-play-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.key-info-play-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.key-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.key-info-item {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.key-info-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.key-info-value {
+    font-size: 1.3em;
+    color: #333;
+    font-weight: bold;
+}
+
+.key-description {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.key-description h4 {
+    color: #1976d2;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.key-description p {
+    color: #424242;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+.key-fun-facts {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.key-fun-facts h4 {
+    color: #856404;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.key-fun-facts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.key-fun-facts li {
+    color: #856404;
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1.05em;
+}
+
+.key-fun-facts li:before {
+    content: "⭐";
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.key-examples {
+    background: linear-gradient(135deg, #d1f2eb 0%, #a3e4d7 100%);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.key-examples h4 {
+    color: #0e6655;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.song-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.song-tag {
+    background: white;
+    color: #0e6655;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.song-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design for key info */
+@media (max-width: 768px) {
+    .key-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .key-selector {
+        gap: 8px;
+    }
+    
+    .key-select-btn {
+        padding: 10px 15px;
+        font-size: 1em;
+        min-width: 45px;
+    }
+    
+    .key-info-note {
+        font-size: 2.5em;
+    }
+}
+
+/* Music Quiz Styles */
+.music-quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.quiz-question-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.quiz-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.quiz-question {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.quiz-option {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.music-theory-info {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #ffc107;
+    width: 100%;
+    max-width: 600px;
+}
+
+.music-theory-info h4 {
+    color: #856404;
+    margin-bottom: 10px;
+}
+
+.music-fact {
+    font-size: 1.1em;
+    color: #856404;
+    line-height: 1.6;
+}
+
+/* Melodies Mode Styles */
+.melodies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.melody-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.melody-display h4 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.melody-notes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.melody-note {
+    background: white;
+    color: #667eea;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.3em;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: noteFloat 2s ease-in-out infinite;
+}
+
+.melody-note:nth-child(even) {
+    animation-delay: 0.5s;
+}
+
+@keyframes noteFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.melody-mini-piano {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.melody-mini-piano h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.mini-piano-keys {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mini-key {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 20px 15px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-width: 60px;
+}
+
+.mini-key:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mini-key:active {
+    transform: translateY(0);
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+}
+
+.melody-challenge {
+    background: #e3f2fd;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.melody-challenge h4 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.melody-progress {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.progress-label {
+    font-weight: bold;
+    color: #666;
+}
+
+#playerNotesDisplay {
+    font-size: 1.2em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Recorder Quiz Styles */
+.recorder-quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.recorder-fingering-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.recorder-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.recorder-mouthpiece {
+    font-size: 2.5em;
+    animation: recorderBob 2s ease-in-out infinite;
+}
+
+@keyframes recorderBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.recorder-holes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(180deg, #8b4513 0%, #654321 100%);
+    padding: 25px 35px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.recorder-separator {
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
+    border-top: 2px solid #654321;
+    border-bottom: 2px solid #654321;
+    margin: 5px 0;
+}
+
+.recorder-hole {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hole-label {
+    font-size: 1.2em;
+    min-width: 35px;
+    text-align: center;
+}
+
+.hole-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.hole-circle.open {
+    background: white;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hole-circle.closed {
+    background: #333;
+    border-color: #222;
+}
+
+.hole-circle.half {
+    background: linear-gradient(180deg, #333 0%, #333 50%, white 50%, white 100%);
+    border-color: #222;
+}
+
+.fingering-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
+    color: #333;
+    font-weight: 600;
+}
+
+.hole-example {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.hole-example.open {
+    background: white;
+}
+
+.hole-example.closed {
+    background: #333;
+}
+
+.hole-example.half {
+    background: linear-gradient(180deg, #333 0%, #333 50%, white 50%, white 100%);
+}
+
+.recorder-info {
+    background: #d1f2eb;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #17a2b8;
+    width: 100%;
+    max-width: 600px;
+}
+
+.recorder-info h4 {
+    color: #0c5460;
+    margin-bottom: 10px;
+}
+
+.recorder-tip {
+    font-size: 1.1em;
+    color: #0c5460;
+    line-height: 1.6;
 }
 
 /* ========================================

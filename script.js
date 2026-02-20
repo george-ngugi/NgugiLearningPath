@@ -152,6 +152,69 @@ const rhymingDatabase = {
     ]
 };
 
+// Digraphs database - two letters that make one sound
+const digraphsDatabase = {
+    easy: [
+        { word: 'fish', emoji: '🐟', digraph: 'sh', position: 'end', allLetters: ['f', 'i', 'sh'], otherDigraphs: ['ch', 'th', 'wh'] },
+        { word: 'ship', emoji: '🚢', digraph: 'sh', position: 'start', allLetters: ['sh', 'i', 'p'], otherDigraphs: ['ch', 'th', 'wh'] },
+        { word: 'wish', emoji: '⭐', digraph: 'sh', position: 'end', allLetters: ['w', 'i', 'sh'], otherDigraphs: ['ch', 'th', 'ck'] },
+        { word: 'shop', emoji: '🏪', digraph: 'sh', position: 'start', allLetters: ['sh', 'o', 'p'], otherDigraphs: ['ch', 'th', 'wh'] },
+        
+        { word: 'chair', emoji: '🪑', digraph: 'ch', position: 'start', allLetters: ['ch', 'air'], otherDigraphs: ['sh', 'th', 'wh'] },
+        { word: 'beach', emoji: '🏖️', digraph: 'ch', position: 'end', allLetters: ['b', 'ea', 'ch'], otherDigraphs: ['sh', 'th', 'ck'] },
+        { word: 'chip', emoji: '🍟', digraph: 'ch', position: 'start', allLetters: ['ch', 'i', 'p'], otherDigraphs: ['sh', 'th', 'wh'] },
+        { word: 'lunch', emoji: '🍱', digraph: 'ch', position: 'end', allLetters: ['l', 'u', 'n', 'ch'], otherDigraphs: ['sh', 'th', 'ck'] },
+        
+        { word: 'bath', emoji: '🛁', digraph: 'th', position: 'end', allLetters: ['b', 'a', 'th'], otherDigraphs: ['sh', 'ch', 'ck'] },
+        { word: 'think', emoji: '🤔', digraph: 'th', position: 'start', allLetters: ['th', 'i', 'n', 'k'], otherDigraphs: ['sh', 'ch', 'wh'] },
+        { word: 'teeth', emoji: '🦷', digraph: 'th', position: 'end', allLetters: ['t', 'ee', 'th'], otherDigraphs: ['sh', 'ch', 'ck'] },
+        { word: 'thumb', emoji: '👍', digraph: 'th', position: 'start', allLetters: ['th', 'u', 'm', 'b'], otherDigraphs: ['sh', 'ch', 'wh'] },
+        
+        { word: 'duck', emoji: '🦆', digraph: 'ck', position: 'end', allLetters: ['d', 'u', 'ck'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'rock', emoji: '🪨', digraph: 'ck', position: 'end', allLetters: ['r', 'o', 'ck'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'clock', emoji: '🕐', digraph: 'ck', position: 'end', allLetters: ['c', 'l', 'o', 'ck'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'black', emoji: '⬛', digraph: 'ck', position: 'end', allLetters: ['b', 'l', 'a', 'ck'], otherDigraphs: ['sh', 'ch', 'th'] }
+    ],
+    medium: [
+        { word: 'whale', emoji: '🐋', digraph: 'wh', position: 'start', allLetters: ['wh', 'a', 'l', 'e'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'white', emoji: '⚪', digraph: 'wh', position: 'start', allLetters: ['wh', 'i', 't', 'e'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'wheel', emoji: '⚙️', digraph: 'wh', position: 'start', allLetters: ['wh', 'ee', 'l'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'whisper', emoji: '🤫', digraph: 'wh', position: 'start', allLetters: ['wh', 'i', 's', 'p', 'er'], otherDigraphs: ['sh', 'ch', 'th'] },
+        
+        { word: 'phone', emoji: '📱', digraph: 'ph', position: 'start', allLetters: ['ph', 'o', 'n', 'e'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'graph', emoji: '📊', digraph: 'ph', position: 'end', allLetters: ['g', 'r', 'a', 'ph'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'photo', emoji: '📷', digraph: 'ph', position: 'start', allLetters: ['ph', 'o', 't', 'o'], otherDigraphs: ['sh', 'ch', 'th'] },
+        
+        { word: 'ring', emoji: '💍', digraph: 'ng', position: 'end', allLetters: ['r', 'i', 'ng'], otherDigraphs: ['sh', 'ch', 'ck'] },
+        { word: 'sing', emoji: '🎤', digraph: 'ng', position: 'end', allLetters: ['s', 'i', 'ng'], otherDigraphs: ['sh', 'ch', 'ck'] },
+        { word: 'king', emoji: '🤴', digraph: 'ng', position: 'end', allLetters: ['k', 'i', 'ng'], otherDigraphs: ['sh', 'ch', 'ck'] },
+        { word: 'strong', emoji: '💪', digraph: 'ng', position: 'end', allLetters: ['s', 't', 'r', 'o', 'ng'], otherDigraphs: ['sh', 'ch', 'ck'] },
+        
+        { word: 'brush', emoji: '🖌️', digraph: 'sh', position: 'end', allLetters: ['b', 'r', 'u', 'sh'], otherDigraphs: ['ch', 'th', 'ck'] },
+        { word: 'trash', emoji: '🗑️', digraph: 'sh', position: 'end', allLetters: ['t', 'r', 'a', 'sh'], otherDigraphs: ['ch', 'th', 'ck'] },
+        { word: 'sheep', emoji: '🐑', digraph: 'sh', position: 'start', allLetters: ['sh', 'ee', 'p'], otherDigraphs: ['ch', 'th', 'wh'] },
+        
+        { word: 'teacher', emoji: '👨‍🏫', digraph: 'ch', position: 'middle', allLetters: ['t', 'ea', 'ch', 'er'], otherDigraphs: ['sh', 'th', 'ck'] },
+        { word: 'chicken', emoji: '🐔', digraph: 'ch', position: 'start', allLetters: ['ch', 'i', 'ck', 'en'], otherDigraphs: ['sh', 'th', 'wh'] },
+        { word: 'cheese', emoji: '🧀', digraph: 'ch', position: 'start', allLetters: ['ch', 'ee', 's', 'e'], otherDigraphs: ['sh', 'th', 'wh'] }
+    ],
+    hard: [
+        { word: 'dolphin', emoji: '🐬', digraph: 'ph', position: 'middle', allLetters: ['d', 'o', 'l', 'ph', 'in'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'elephant', emoji: '🐘', digraph: 'ph', position: 'middle', allLetters: ['e', 'l', 'e', 'ph', 'ant'], otherDigraphs: ['sh', 'ch', 'th'] },
+        { word: 'alphabet', emoji: '🔤', digraph: 'ph', position: 'middle', allLetters: ['a', 'l', 'ph', 'a', 'b', 'et'], otherDigraphs: ['sh', 'ch', 'th'] },
+        
+        { word: 'birthday', emoji: '🎂', digraph: 'th', position: 'middle', allLetters: ['b', 'ir', 'th', 'd', 'ay'], otherDigraphs: ['sh', 'ch', 'ph'] },
+        { word: 'something', emoji: '💭', digraph: 'th', position: 'middle', allLetters: ['s', 'o', 'm', 'e', 'th', 'ing'], otherDigraphs: ['sh', 'ch', 'ng'] },
+        { word: 'weather', emoji: '🌤️', digraph: 'th', position: 'middle', allLetters: ['w', 'ea', 'th', 'er'], otherDigraphs: ['sh', 'ch', 'wh'] },
+        
+        { word: 'mushroom', emoji: '🍄', digraph: 'sh', position: 'middle', allLetters: ['m', 'u', 'sh', 'r', 'oo', 'm'], otherDigraphs: ['ch', 'th', 'ph'] },
+        { word: 'sunshine', emoji: '☀️', digraph: 'sh', position: 'middle', allLetters: ['s', 'u', 'n', 'sh', 'ine'], otherDigraphs: ['ch', 'th', 'ph'] },
+        
+        { word: 'watching', emoji: '👀', digraph: 'ch', position: 'middle', allLetters: ['w', 'a', 't', 'ch', 'ing'], otherDigraphs: ['sh', 'th', 'ng'] },
+        { word: 'kitchen', emoji: '🍳', digraph: 'ch', position: 'middle', allLetters: ['k', 'i', 't', 'ch', 'en'], otherDigraphs: ['sh', 'th', 'ck'] }
+    ]
+};
+
 // Comprehension passages with multiple questions
 const comprehensionDatabase = {
     easy: [
@@ -288,6 +351,7 @@ const allSentences = [...sentenceDatabase.easy, ...sentenceDatabase.medium, ...s
 const allReadingSentences = [...readingSentences.easy, ...readingSentences.medium, ...readingSentences.hard];
 const allComprehensions = [...comprehensionDatabase.easy, ...comprehensionDatabase.medium, ...comprehensionDatabase.hard];
 const allRhymingWords = [...rhymingDatabase.easy, ...rhymingDatabase.medium, ...rhymingDatabase.hard];
+const allDigraphs = [...digraphsDatabase.easy, ...digraphsDatabase.medium, ...digraphsDatabase.hard];
 
 // Math problems database
 const mathDatabase = {
@@ -484,9 +548,11 @@ let usedSentences = new Set();
 let usedReadingSentences = new Set();
 let usedComprehensions = new Set();
 let usedRhymingWords = new Set();
+let usedDigraphs = new Set();
 let usedMathProblems = new Set();
 let usedFrenchItems = new Set();
 let currentRhymingWord = null;
+let currentDigraph = null;
 let selectedRhymes = new Set();
 let userSentence = [];
 let questionsCompleted = 0;
@@ -588,14 +654,22 @@ const targetWordEl = document.getElementById('targetWord');
 const targetPronounceBtn = document.getElementById('targetPronounceBtn');
 const rhymingOptionsEl = document.getElementById('rhymingOptions');
 const checkRhymingBtn = document.getElementById('checkRhyming');
+const digraphsGame = document.getElementById('digraphs-game');
+const digraphsModeBtn = document.getElementById('digraphsMode');
+const digraphWordEl = document.getElementById('digraphWord');
+const digraphEmojiEl = document.getElementById('digraphEmoji');
+const digraphPronounceBtn = document.getElementById('digraphPronounceBtn');
+const digraphOptionsEl = document.getElementById('digraphOptions');
 
 // Subject selector elements
 const englishSubjectBtn = document.getElementById('englishSubject');
 const mathSubjectBtn = document.getElementById('mathSubject');
 const frenchSubjectBtn = document.getElementById('frenchSubject');
+const musicSubjectBtn = document.getElementById('musicSubject');
 const englishModesEl = document.getElementById('english-modes');
 const mathModesEl = document.getElementById('math-modes');
 const frenchModesEl = document.getElementById('french-modes');
+const musicModesEl = document.getElementById('music-modes');
 
 // Math game elements
 const mathGame = document.getElementById('math-game');
@@ -626,6 +700,30 @@ const frenchWordDisplayEl = document.getElementById('frenchWordDisplay');
 const frenchEnglishEl = document.getElementById('frenchEnglish');
 const frenchOptionsEl = document.getElementById('frenchOptions');
 const frenchPronounceBtn = document.getElementById('frenchPronounce');
+
+// Music game elements
+const pianoGame = document.getElementById('piano-game');
+const musicQuizGame = document.getElementById('music-quiz-game');
+const melodiesGame = document.getElementById('melodies-game');
+const recorderGame = document.getElementById('recorder-game');
+const pianoModeBtn = document.getElementById('pianoMode');
+const musicQuizModeBtn = document.getElementById('musicQuizMode');
+const melodiesModeBtn = document.getElementById('melodiesMode');
+const recorderModeBtn = document.getElementById('recorderMode');
+const currentNoteEl = document.getElementById('currentNote');
+const playNoteBtn = document.getElementById('playNoteBtn');
+const practiceFeedbackEl = document.getElementById('practiceFeedback');
+const targetNoteTextEl = document.getElementById('targetNoteText');
+const musicQuizOptionsEl = document.getElementById('musicQuizOptions');
+const playQuizNoteBtn = document.getElementById('playQuizNoteBtn');
+const musicFactDisplayEl = document.getElementById('musicFactDisplay');
+const playMelodyBtn = document.getElementById('playMelodyBtn');
+const checkMelodyBtn = document.getElementById('checkMelodyBtn');
+const resetMelodyBtn = document.getElementById('resetMelodyBtn');
+const playerNotesDisplayEl = document.getElementById('playerNotesDisplay');
+const recorderQuizOptionsEl = document.getElementById('recorderQuizOptions');
+const playRecorderNoteBtn = document.getElementById('playRecorderNoteBtn');
+const recorderTipDisplayEl = document.getElementById('recorderTipDisplay');
 
 // Mode selection elements
 const modeSelectionEl = document.getElementById('mode-selection');
@@ -941,6 +1039,7 @@ function setupEventListeners() {
     englishSubjectBtn.addEventListener('click', () => switchSubject('english'));
     mathSubjectBtn.addEventListener('click', () => switchSubject('math'));
     frenchSubjectBtn.addEventListener('click', () => switchSubject('french'));
+    musicSubjectBtn.addEventListener('click', () => switchSubject('music'));
     
     // English modes
     readingModeBtn.addEventListener('click', () => switchMode('reading'));
@@ -948,6 +1047,7 @@ function setupEventListeners() {
     sentenceModeBtn.addEventListener('click', () => switchMode('sentence'));
     comprehensionModeBtn.addEventListener('click', () => switchMode('comprehension'));
     rhymingModeBtn.addEventListener('click', () => switchMode('rhyming'));
+    digraphsModeBtn.addEventListener('click', () => switchMode('digraphs'));
     
     // Math modes
     additionModeBtn.addEventListener('click', () => switchMode('addition'));
@@ -962,6 +1062,12 @@ function setupEventListeners() {
     frenchColorsModeBtn.addEventListener('click', () => switchMode('colors'));
     frenchPhrasesModeBtn.addEventListener('click', () => switchMode('phrases'));
     frenchDaysModeBtn.addEventListener('click', () => switchMode('days'));
+    
+    // Music modes
+    pianoModeBtn.addEventListener('click', () => switchMode('piano'));
+    musicQuizModeBtn.addEventListener('click', () => switchMode('musicQuiz'));
+    melodiesModeBtn.addEventListener('click', () => switchMode('melodies'));
+    recorderModeBtn.addEventListener('click', () => switchMode('recorder'));
     
     wordReadingBtn.addEventListener('click', () => switchReadingType('word'));
     sentenceReadingBtn.addEventListener('click', () => switchReadingType('sentence'));
@@ -999,11 +1105,13 @@ function switchSubject(subject) {
     englishSubjectBtn.classList.remove('active');
     mathSubjectBtn.classList.remove('active');
     frenchSubjectBtn.classList.remove('active');
+    musicSubjectBtn.classList.remove('active');
     
     // Hide all mode groups
     englishModesEl.classList.add('hidden');
     mathModesEl.classList.add('hidden');
     frenchModesEl.classList.add('hidden');
+    musicModesEl.classList.add('hidden');
     
     // Remove all mode button active states first
     readingModeBtn.classList.remove('active');
@@ -1020,6 +1128,10 @@ function switchSubject(subject) {
     frenchColorsModeBtn.classList.remove('active');
     frenchPhrasesModeBtn.classList.remove('active');
     frenchDaysModeBtn.classList.remove('active');
+    pianoModeBtn.classList.remove('active');
+    musicQuizModeBtn.classList.remove('active');
+    melodiesModeBtn.classList.remove('active');
+    recorderModeBtn.classList.remove('active');
     
     // Hide all games - remove active class
     readingGame.classList.remove('active');
@@ -1027,8 +1139,13 @@ function switchSubject(subject) {
     sentenceGame.classList.remove('active');
     comprehensionGame.classList.remove('active');
     rhymingGame.classList.remove('active');
+    digraphsGame.classList.remove('active');
     mathGame.classList.remove('active');
     frenchGame.classList.remove('active');
+    pianoGame.classList.remove('active');
+    musicQuizGame.classList.remove('active');
+    melodiesGame.classList.remove('active');
+    recorderGame.classList.remove('active');
     
     if (subject === 'english') {
         englishSubjectBtn.classList.add('active');
@@ -1045,6 +1162,11 @@ function switchSubject(subject) {
         frenchModesEl.classList.remove('hidden');
         currentMode = 'words';
         switchMode('words');
+    } else if (subject === 'music') {
+        musicSubjectBtn.classList.add('active');
+        musicModesEl.classList.remove('hidden');
+        currentMode = 'piano';
+        switchMode('piano');
     }
     
     hideFeedback();
@@ -1060,9 +1182,14 @@ function switchMode(mode) {
     sentenceGame.classList.remove('active');
     comprehensionGame.classList.remove('active');
     rhymingGame.classList.remove('active');
+    digraphsGame.classList.remove('active');
     mathGame.classList.remove('active');
     clockGame.classList.remove('active');
     frenchGame.classList.remove('active');
+    pianoGame.classList.remove('active');
+    musicQuizGame.classList.remove('active');
+    melodiesGame.classList.remove('active');
+    recorderGame.classList.remove('active');
     
     // Remove all mode button active states
     readingModeBtn.classList.remove('active');
@@ -1070,6 +1197,7 @@ function switchMode(mode) {
     sentenceModeBtn.classList.remove('active');
     comprehensionModeBtn.classList.remove('active');
     rhymingModeBtn.classList.remove('active');
+    digraphsModeBtn.classList.remove('active');
     additionModeBtn.classList.remove('active');
     subtractionModeBtn.classList.remove('active');
     multiplicationModeBtn.classList.remove('active');
@@ -1080,6 +1208,10 @@ function switchMode(mode) {
     frenchColorsModeBtn.classList.remove('active');
     frenchPhrasesModeBtn.classList.remove('active');
     frenchDaysModeBtn.classList.remove('active');
+    pianoModeBtn.classList.remove('active');
+    musicQuizModeBtn.classList.remove('active');
+    melodiesModeBtn.classList.remove('active');
+    recorderModeBtn.classList.remove('active');
     
     // English modes
     if (mode === 'reading') {
@@ -1097,6 +1229,9 @@ function switchMode(mode) {
     } else if (mode === 'rhyming') {
         rhymingGame.classList.add('active');
         rhymingModeBtn.classList.add('active');
+    } else if (mode === 'digraphs') {
+        digraphsGame.classList.add('active');
+        digraphsModeBtn.classList.add('active');
     } 
     // Math modes
     else if (mode === 'addition' || mode === 'subtraction' || mode === 'multiplication' || mode === 'counting') {
@@ -1120,10 +1255,30 @@ function switchMode(mode) {
         else if (mode === 'phrases') frenchPhrasesModeBtn.classList.add('active');
         else if (mode === 'days') frenchDaysModeBtn.classList.add('active');
     }
+    // Music modes
+    else if (mode === 'piano') {
+        pianoGame.classList.add('active');
+        pianoModeBtn.classList.add('active');
+        initPianoMode();
+    } else if (mode === 'musicQuiz') {
+        musicQuizGame.classList.add('active');
+        musicQuizModeBtn.classList.add('active');
+        loadMusicQuiz();
+    } else if (mode === 'melodies') {
+        melodiesGame.classList.add('active');
+        melodiesModeBtn.classList.add('active');
+        loadMelody();
+    } else if (mode === 'recorder') {
+        recorderGame.classList.add('active');
+        recorderModeBtn.classList.add('active');
+        loadRecorderQuiz();
+    }
     
     hideFeedback();
     nextBtn.classList.add('hidden');
-    loadNewWord();
+    if (currentSubject !== 'music') {
+        loadNewWord();
+    }
 }
 
 // Switch between word and sentence reading
@@ -1195,6 +1350,9 @@ function loadNewWord() {
         currentRhymingWord = getRandomRhymingWord();
         selectedRhymes = new Set();
         loadRhymingMode();
+    } else if (currentMode === 'digraphs') {
+        currentDigraph = getRandomDigraph();
+        loadDigraphsMode();
     } else if (currentMode === 'addition' || currentMode === 'subtraction' || currentMode === 'multiplication') {
         currentMathProblem = getRandomMathProblem(currentMode);
         loadMathMode();
@@ -1362,6 +1520,21 @@ function getRandomRhymingWord() {
     
     usedRhymingWords.add(rhymingWord.word);
     return rhymingWord;
+}
+
+// Get a random digraph word
+function getRandomDigraph() {
+    if (usedDigraphs.size >= allDigraphs.length) {
+        usedDigraphs.clear();
+    }
+    
+    let digraphWord;
+    do {
+        digraphWord = allDigraphs[Math.floor(Math.random() * allDigraphs.length)];
+    } while (usedDigraphs.has(digraphWord.word));
+    
+    usedDigraphs.add(digraphWord.word);
+    return digraphWord;
 }
 
 // Get random math problem
@@ -1568,6 +1741,79 @@ function pronounceRhymeOption(word) {
             
             window.speechSynthesis.cancel();
             window.speechSynthesis.speak(utterance);
+        }
+    };
+    
+    showPasscodeModal(executeAudio);
+}
+
+// Load Digraphs mode
+function loadDigraphsMode() {
+    digraphWordEl.textContent = currentDigraph.word;
+    digraphEmojiEl.textContent = currentDigraph.emoji;
+    
+    // Generate options - correct digraph + 3 incorrect options
+    const options = [currentDigraph.digraph, ...currentDigraph.otherDigraphs];
+    const shuffledOptions = options.sort(() => Math.random() - 0.5);
+    
+    digraphOptionsEl.innerHTML = '';
+    shuffledOptions.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'digraph-option-btn';
+        btn.textContent = option;
+        btn.addEventListener('click', () => checkDigraphAnswer(option, btn));
+        digraphOptionsEl.appendChild(btn);
+    });
+    
+    // Pronounce button
+    digraphPronounceBtn.onclick = pronounceDigraphWord;
+}
+
+// Check digraph answer
+function checkDigraphAnswer(selected, btn) {
+    const buttons = digraphOptionsEl.querySelectorAll('.digraph-option-btn');
+    buttons.forEach(b => b.disabled = true);
+    
+    if (selected === currentDigraph.digraph) {
+        btn.classList.add('correct');
+        showFeedback(true, `🎉 Perfect! "${currentDigraph.word}" has the "${currentDigraph.digraph}" sound!`);
+        updateScore(10);
+        awardBuildingResources(currentDifficulty || 'easy');
+        questionsCompleted++;
+        setTimeout(() => {
+            nextBtn.classList.remove('hidden');
+        }, 1500);
+    } else {
+        btn.classList.add('incorrect');
+        // Highlight the correct answer
+        buttons.forEach(b => {
+            if (b.textContent === currentDigraph.digraph) {
+                b.classList.add('correct');
+            }
+        });
+        showFeedback(false, `Not quite! "${currentDigraph.word}" has the "${currentDigraph.digraph}" sound. ${currentDigraph.description}`);
+        streak = 0;
+        updateScoreDisplay();
+    }
+}
+
+// Pronounce digraph word
+function pronounceDigraphWord() {
+    const executeAudio = () => {
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(currentDigraph.word);
+            utterance.rate = 0.7;
+            utterance.pitch = 1.2;
+            utterance.volume = 1;
+            if (englishVoice) utterance.voice = englishVoice;
+            
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(utterance);
+            
+            digraphPronounceBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                digraphPronounceBtn.style.transform = 'scale(1)';
+            }, 300);
         }
     };
     
@@ -3216,3 +3462,704 @@ function showBuildingRewardNotification(rewards) {
 
 // Initialize building resources on page load
 loadBuildingData();
+
+// ========================================
+// MUSIC GAME FUNCTIONS
+// ========================================
+
+// Audio context for playing notes
+let audioContext;
+let currentTargetNote = 'C';
+let currentMusicQuizAnswer = '';
+let currentRecorderQuizAnswer = '';
+let currentRecorderFingering = null;
+let playerMelodyNotes = [];
+let currentMelody = [];
+
+// Music theory data
+const musicTheoryFacts = [
+    "There are 7 white keys (C, D, E, F, G, A, B) and 5 black keys in an octave!",
+    "The black keys are called sharps (#) or flats (♭).",
+    "C is also called 'Do' in solfège (Do, Re, Mi, Fa, Sol, La, Ti).",
+    "An octave is the interval between one note and another with double its frequency.",
+    "Middle C is the most central note on a piano keyboard.",
+    "The pattern of black keys repeats every octave: 2 black keys, then 3 black keys.",
+    "Music notes can be remembered with 'Every Good Boy Does Fine' for the lines of the treble clef."
+];
+
+// Detailed key information data
+const keyDetailsData = {
+    'C': {
+        note: 'C',
+        solfege: 'Do',
+        frequency: '261.63 Hz',
+        type: 'Natural (White Key)',
+        position: '1st note of the scale',
+        description: 'C is the most fundamental note in Western music and is often called "Middle C" when referring to the center of a piano keyboard. It\'s the starting point for learning music theory and serves as a reference point for all other notes.',
+        funFacts: [
+            'Most pianos have 88 keys, and Middle C is right in the middle!',
+            'C Major is the only major scale with no sharps or flats',
+            'The C note is used to tune many orchestras before performances',
+            'C is the first note in the musical alphabet'
+        ],
+        songs: ['Happy Birthday', 'Mary Had a Little Lamb', 'Twinkle Twinkle']
+    },
+    'C#': {
+        note: 'C# / D♭',
+        solfege: 'Di / Ra',
+        frequency: '277.18 Hz',
+        type: 'Sharp/Flat (Black Key)',
+        position: 'Between C and D',
+        description: 'C sharp (C#) is the black key between C and D. It can also be called D flat (D♭), depending on the musical context. Sharp means one half-step higher than C, while flat means one half-step lower than D.',
+        funFacts: [
+            'C# and D♭ sound the same but are written differently in sheet music',
+            'The black keys were added to pianos to play more musical scales',
+            'C# Major has 7 sharps in its key signature!',
+            'This note creates rich, colorful harmonies in music'
+        ],
+        songs: ['Für Elise (opening)', 'Moonlight Sonata', 'Clair de Lune']
+    },
+    'D': {
+        note: 'D',
+        solfege: 'Re',
+        frequency: '293.66 Hz',
+        type: 'Natural (White Key)',
+        position: '2nd note of the C scale',
+        description: 'D is the second note in the musical alphabet and is known for its bright, cheerful sound. Many folk songs and dance tunes are written in the key of D because it sounds happy and energetic.',
+        funFacts: [
+            'D is a favorite key for violinists because of the open D string',
+            'Many Irish folk songs are played in the key of D',
+            'The D note vibrates 293.66 times per second!',
+            'D Major is often called the "key of glory" in classical music'
+        ],
+        songs: ['Ode to Joy', 'Jingle Bells', 'When the Saints Go Marching In']
+    },
+    'D#': {
+        note: 'D# / E♭',
+        solfege: 'Ri / Me',
+        frequency: '311.13 Hz',
+        type: 'Sharp/Flat (Black Key)',
+        position: 'Between D and E',
+        description: 'D sharp (D#) is the black key located between D and E. As E flat (E♭), it appears frequently in jazz and blues music, adding depth and emotion to melodies. This note creates a sense of tension and resolution in music.',
+        funFacts: [
+            'E♭ is extremely common in jazz music',
+            'Many saxophones and clarinets are tuned to E♭',
+            'This note appears in famous blues progressions',
+            'E♭ Major has 3 flats: B♭, E♭, and A♭'
+        ],
+        songs: ['Take Five', 'Summertime (Gershwin)', 'Rhapsody in Blue']
+    },
+    'E': {
+        note: 'E',
+        solfege: 'Mi',
+        frequency: '329.63 Hz',
+        type: 'Natural (White Key)',
+        position: '3rd note of the C scale',
+        description: 'E is the third note of the musical scale and has a warm, resonant quality. It\'s one of the most important notes in music because it forms the major third interval with C, which gives major chords their happy sound.',
+        funFacts: [
+            'E is the highest note on a standard guitar',
+            'The note E creates the "major" feeling in C major chords',
+            'Many beginner songs start on the E note',
+            'E Major is a favorite key for rock and pop music'
+        ],
+        songs: ['Let It Be', 'Hey Jude', 'Lean On Me']
+    },
+    'F': {
+        note: 'F',
+        solfege: 'Fa',
+        frequency: '349.23 Hz',
+        type: 'Natural (White Key)',
+        position: '4th note of the C scale',
+        description: 'F is the fourth note of the musical alphabet and marks an important point in the scale. The interval from C to F (called a perfect fourth) is one of the most consonant and pleasing intervals in all of music.',
+        funFacts: [
+            'There is no black key between E and F - they are only a half-step apart!',
+            'F Major has one flat (B♭) in its key signature',
+            'The F clef (bass clef) is named after the F note',
+            'Many lullabies are written in the key of F Major'
+        ],
+        songs: ['Somewhere Over the Rainbow', 'Imagine', 'Can You Feel the Love Tonight']
+    },
+    'F#': {
+        note: 'F# / G♭',
+        solfege: 'Fi / Se',
+        frequency: '369.99 Hz',
+        type: 'Sharp/Flat (Black Key)',
+        position: 'Between F and G',
+        description: 'F sharp (F#) is the black key between F and G. It\'s also known as G flat (G♭). This note is important in many musical scales and creates exciting, dramatic moments in compositions. Many famous classical pieces use F# to create emotional depth.',
+        funFacts: [
+            'F# Major has 6 sharps - one of the sharpest keys!',
+            'This note is very common in Eastern European folk music',
+            'F# creates a bright, shimmering sound quality',
+            'Many guitar solos feature the F# note prominently'
+        ],
+        songs: ['Prelude in C# Minor', 'Flight of the Bumblebee', 'Hungarian Rhapsody No. 2']
+    },
+    'G': {
+        note: 'G',
+        solfege: 'Sol',
+        frequency: '392.00 Hz',
+        type: 'Natural (White Key)',
+        position: '5th note of the C scale',
+        description: 'G is the fifth note of the musical scale and is incredibly important in music. The interval from C to G (called a perfect fifth) is the foundation of harmony in Western music. G Major is one of the most common keys in folk and country music.',
+        funFacts: [
+            'G Major uses only one sharp (F#) in its key signature',
+            'The treble clef is also called the "G clef" because it circles the G line',
+            'Many children\'s songs are in the key of G Major',
+            'G note is the perfect fifth above C - a very harmonious interval!'
+        ],
+        songs: ['Row Row Row Your Boat', 'Old MacDonald', 'This Land Is Your Land']
+    },
+    'G#': {
+        note: 'G# / A♭',
+        solfege: 'Si / Le',
+        frequency: '415.30 Hz',
+        type: 'Sharp/Flat (Black Key)',
+        position: 'Between G and A',
+        description: 'G sharp (G#) is the black key between G and A, also called A flat (A♭). This note is particularly important in minor keys and creates a melancholic, emotional sound. A♭ Major is a favorite key for romantic and expressive music.',
+        funFacts: [
+            'A♭ Major has 4 flats in its key signature',
+            'Many famous piano concertos are written in A♭ Major',
+            'This note is common in gospel and soul music',
+            'Jazz musicians love using A♭ for its rich, warm sound'
+        ],
+        songs: ['As Time Goes By', 'Somewhere', 'Memory (from Cats)']
+    },
+    'A': {
+        note: 'A',
+        solfege: 'La',
+        frequency: '440.00 Hz',
+        type: 'Natural (White Key)',
+        position: '6th note of the C scale',
+        description: 'A is the sixth note of the musical scale and has a special significance - the A above middle C vibrates at exactly 440 Hz, which is the international standard for tuning all musical instruments! This is called "concert pitch" or "A440."',
+        funFacts: [
+            'A440 Hz is the universal tuning standard for orchestras worldwide',
+            'Orchestras tune to the oboe playing the A note',
+            'A Major has 3 sharps: F#, C#, and G#',
+            'The A note is used to check if instruments are in tune',
+            'Your smartphone\'s dial tone uses the A note!'
+        ],
+        songs: ['Canon in D', 'Eine Kleine Nachtmusik', 'The Sound of Music']
+    },
+    'A#': {
+        note: 'A# / B♭',
+        solfege: 'Li / Te',
+        frequency: '466.16 Hz',
+        type: 'Sharp/Flat (Black Key)',
+        position: 'Between A and B',
+        description: 'A sharp (A#) is the black key between A and B, more commonly known as B flat (B♭) in most musical contexts. B♭ is extremely important in wind instruments - many trumpets, clarinets, and saxophones are naturally tuned to B♭.',
+        funFacts: [
+            'B♭ instruments are the most common type of band instruments',
+            'B♭ Major has 2 flats: B♭ and E♭',
+            'This is one of the most comfortable keys for brass instruments',
+            'Many famous symphonies are written in B♭ Major',
+            'B♭ creates a warm, mellow tone in music'
+        ],
+        songs: ['Star Wars Theme', 'Superman Theme', 'Exodus (Main Theme)']
+    },
+    'B': {
+        note: 'B',
+        solfege: 'Ti',
+        frequency: '493.88 Hz',
+        type: 'Natural (White Key)',
+        position: '7th note of the C scale',
+        description: 'B is the seventh and final note in the musical alphabet before returning to C. It creates a strong sense of wanting to resolve back to C, which is why it\'s called the "leading tone." There is no black key between B and C - they are only a half-step apart.',
+        funFacts: [
+            'B is called the "leading tone" because it leads back to C',
+            'There\'s no black key between B and C, just like E and F',
+            'B Major has 5 sharps in its key signature',
+            'The note B is the highest of the natural notes',
+            'B resolves to C creating a satisfying musical conclusion'
+        ],
+        songs: ['The Blue Danube', 'The Entertainer', 'Maple Leaf Rag']
+    }
+};
+
+let currentSelectedKey = 'C'; // Track currently selected key for display
+
+const musicQuizQuestions = [
+    {
+        question: "Which note comes after C?",
+        options: ["D", "E", "B", "A"],
+        answer: "D",
+        type: "theory"
+    },
+    {
+        question: "What is the solfège name for the note G?",
+        options: ["Sol", "La", "Fa", "Do"],
+        answer: "Sol",
+        type: "theory"
+    },
+    {
+        question: "How many white keys are in one octave?",
+        options: ["7", "5", "12", "8"],
+        answer: "7",
+        type: "theory"
+    },
+    {
+        question: "Which note is also called 'Do'?",
+        options: ["C", "D", "E", "F"],
+        answer: "C",
+        type: "theory"
+    },
+    {
+        question: "Listen to this note. Which one is it?",
+        options: ["C", "E", "G", "A"],
+        answer: "C",
+        type: "listening",
+        frequency: 261.63
+    },
+    {
+        question: "Which black key is between C and D?",
+        options: ["C#", "D#", "F#", "G#"],
+        answer: "C#",
+        type: "theory"
+    }
+];
+
+const melodies = [
+    {
+        name: "Twinkle Twinkle Little Star",
+        notes: ["C", "C", "G", "G", "A", "A", "G"]
+    },
+    {
+        name: "Mary Had a Little Lamb",
+        notes: ["E", "D", "C", "D", "E", "E", "E"]
+    },
+    {
+        name: "Hot Cross Buns",
+        notes: ["E", "D", "C", "E", "D", "C"]
+    },
+    {
+        name: "Ode to Joy",
+        notes: ["E", "E", "F", "G", "G", "F", "E", "D"]
+    }
+];
+
+// Recorder fingering database for descant (soprano) recorder
+// 0 = thumb hole (back), 1-7 = front holes from top to bottom
+// Fingering: 1 = covered, 0 = open, 0.5 = half-covered
+const recorderFingerings = [
+    {
+        note: "C",
+        frequency: 523.25,
+        fingering: [0.5, 1, 1, 1, 1, 1, 1, 1],
+        description: "High C - Half-cover the thumb hole, cover all other holes",
+        difficulty: "medium"
+    },
+    {
+        note: "B",
+        frequency: 493.88,
+        fingering: [1, 0, 1, 1, 1, 1, 1, 1],
+        description: "B - Cover thumb and all holes except the first finger",
+        difficulty: "easy"
+    },
+    {
+        note: "A",
+        frequency: 440.00,
+        fingering: [1, 0, 0, 1, 1, 1, 1, 1],
+        description: "A - Cover thumb and bottom six holes",
+        difficulty: "easy"
+    },
+    {
+        note: "G",
+        frequency: 392.00,
+        fingering: [1, 0, 0, 0, 1, 1, 1, 1],
+        description: "G - Cover thumb and bottom four holes",
+        difficulty: "easy"
+    },
+    {
+        note: "F",
+        frequency: 349.23,
+        fingering: [1, 0, 0, 0, 0, 1, 1, 1],
+        description: "F - Cover thumb and bottom three holes",
+        difficulty: "medium"
+    },
+    {
+        note: "E",
+        frequency: 329.63,
+        fingering: [1, 0, 0, 0, 0, 0, 1, 1],
+        description: "E - Cover thumb and bottom two holes",
+        difficulty: "easy"
+    },
+    {
+        note: "D",
+        frequency: 293.66,
+        fingering: [1, 0, 0, 0, 0, 0, 0, 1],
+        description: "D - Cover thumb and only the bottom hole",
+        difficulty: "easy"
+    },
+    {
+        note: "C",
+        frequency: 261.63,
+        fingering: [1, 0, 0, 0, 0, 0, 0, 0],
+        description: "C - Cover only the thumb hole (low C)",
+        difficulty: "medium"
+    },
+    {
+        note: "B",
+        frequency: 246.94,
+        fingering: [1, 1, 0, 0, 0, 0, 0, 0],
+        description: "Low B - Cover thumb and first finger",
+        difficulty: "hard"
+    }
+];
+
+const recorderTips = [
+    "The descant (soprano) recorder is the most common type for beginners!",
+    "Always blow gently - too hard and the note will sound sharp or squeak!",
+    "The thumb hole on the back is used for playing higher notes.",
+    "Practice 'tonguing' by saying 'tu-tu-tu' while you play.",
+    "Keep your fingers curved and cover the holes completely with the soft pads of your fingers.",
+    "BAG are the first three notes most beginners learn!",
+    "Hot Cross Buns uses only three notes: B, A, and G!",
+    "The recorder is one of the oldest musical instruments, dating back over 700 years!",
+    "Perfect posture helps you play better - sit or stand up straight!"
+];
+
+// Initialize audio context
+function initAudioContext() {
+    if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+}
+
+// Play a musical note
+function playNote(frequency, duration = 0.5) {
+    initAudioContext();
+    
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.frequency.value = frequency;
+    oscillator.type = 'sine';
+    
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+    
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + duration);
+}
+
+// Initialize piano mode
+function initPianoMode() {
+    const pianoKeys = document.querySelectorAll('.piano-key');
+    
+    // Add click handlers to piano keys
+    pianoKeys.forEach(key => {
+        key.addEventListener('click', () => {
+            const note = key.getAttribute('data-note');
+            const frequency = parseFloat(key.getAttribute('data-frequency'));
+            
+            playNote(frequency);
+            animateKeyPress(key);
+            
+            // Check if it's the target note
+            if (note === currentTargetNote) {
+                practiceFeedbackEl.textContent = '✓ Correct! Great job!';
+                practiceFeedbackEl.style.color = '#4caf50';
+                updateScore(10);
+                
+                setTimeout(() => {
+                    nextPracticeNote();
+                }, 1500);
+            } else {
+                practiceFeedbackEl.textContent = '❌ Try again!';
+                practiceFeedbackEl.style.color = '#f44336';
+            }
+        });
+    });
+    
+    // Play note button
+    playNoteBtn.addEventListener('click', () => {
+        const targetKey = Array.from(pianoKeys).find(key => key.getAttribute('data-note') === currentTargetNote);
+        if (targetKey) {
+            const frequency = parseFloat(targetKey.getAttribute('data-frequency'));
+            playNote(frequency);
+        }
+    });
+    
+    // Initialize key selector buttons
+    const keySelectButtons = document.querySelectorAll('.key-select-btn');
+    keySelectButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const keyNote = btn.getAttribute('data-note');
+            displayKeyDetails(keyNote);
+            
+            // Update active button
+            keySelectButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+    
+    // Key info play button
+    const keyInfoPlayBtn = document.getElementById('keyInfoPlayBtn');
+    if (keyInfoPlayBtn) {
+        keyInfoPlayBtn.addEventListener('click', () => {
+            const keyData = keyDetailsData[currentSelectedKey];
+            const frequency = parseFloat(keyData.frequency);
+            playNote(frequency, 1.0); // Longer duration for detailed listening
+        });
+    }
+    
+    // Display default key (C)
+    displayKeyDetails('C');
+    
+    // Start with random note
+    nextPracticeNote();
+}
+
+// Display detailed key information
+function displayKeyDetails(keyNote) {
+    const keyData = keyDetailsData[keyNote];
+    if (!keyData) return;
+    
+    currentSelectedKey = keyNote;
+    
+    // Update header
+    document.getElementById('keyInfoNote').textContent = keyData.note;
+    
+    // Update grid info
+    document.getElementById('keySolfege').textContent = keyData.solfege;
+    document.getElementById('keyFrequency').textContent = keyData.frequency;
+    document.getElementById('keyType').textContent = keyData.type;
+    document.getElementById('keyPosition').textContent = keyData.position;
+    
+    // Update description
+    document.getElementById('keyDescription').textContent = keyData.description;
+    
+    // Update fun facts
+    const funFactsList = document.getElementById('keyFunFacts');
+    funFactsList.innerHTML = '';
+    keyData.funFacts.forEach(fact => {
+        const li = document.createElement('li');
+        li.textContent = fact;
+        funFactsList.appendChild(li);
+    });
+    
+    // Update song examples
+    const songExamplesContainer = document.getElementById('songExamples');
+    songExamplesContainer.innerHTML = '';
+    keyData.songs.forEach(song => {
+        const span = document.createElement('span');
+        span.className = 'song-tag';
+        span.textContent = song;
+        songExamplesContainer.appendChild(span);
+    });
+}
+
+// Animate key press
+function animateKeyPress(key) {
+    key.classList.add('playing');
+    setTimeout(() => {
+        key.classList.remove('playing');
+    }, 200);
+}
+
+// Next practice note
+function nextPracticeNote() {
+    const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+    currentTargetNote = notes[Math.floor(Math.random() * notes.length)];
+    currentNoteEl.textContent = currentTargetNote;
+    targetNoteTextEl.textContent = currentTargetNote;
+    practiceFeedbackEl.textContent = '';
+}
+
+// Load music quiz
+function loadMusicQuiz() {
+    const question = musicQuizQuestions[Math.floor(Math.random() * musicQuizQuestions.length)];
+    document.getElementById('musicQuizQuestion').textContent = question.question;
+    currentMusicQuizAnswer = question.answer;
+    
+    // Show/hide play button for listening questions
+    if (question.type === 'listening' && question.frequency) {
+        playQuizNoteBtn.classList.remove('hidden');
+        playQuizNoteBtn.onclick = () => playNote(question.frequency);
+    } else {
+        playQuizNoteBtn.classList.add('hidden');
+    }
+    
+    // Generate options
+    musicQuizOptionsEl.innerHTML = '';
+    question.options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = option;
+        btn.onclick = () => checkMusicQuizAnswer(option);
+        musicQuizOptionsEl.appendChild(btn);
+    });
+    
+    // Random music fact
+    musicFactDisplayEl.textContent = musicTheoryFacts[Math.floor(Math.random() * musicTheoryFacts.length)];
+}
+
+// Check music quiz answer
+function checkMusicQuizAnswer(answer) {
+    if (answer === currentMusicQuizAnswer) {
+        showFeedback(true, '🎉 Excellent! You know your music!');
+        updateScore(15);
+        awardBuildingResources(currentDifficulty || 'easy');
+        setTimeout(() => {
+            nextBtn.classList.remove('hidden');
+            nextBtn.onclick = loadMusicQuiz;
+        }, 1500);
+    } else {
+        showFeedback(false, `Not quite! The answer is ${currentMusicQuizAnswer}.`);
+    }
+}
+
+// Load melody challenge
+function loadMelody() {
+    const melody = melodies[Math.floor(Math.random() * melodies.length)];
+    currentMelody = melody.notes;
+    playerMelodyNotes = [];
+    
+    document.getElementById('melodyTitle').textContent = melody.name;
+    
+    // Display melody notes
+    const melodyNotesEl = document.getElementById('melodyNotes');
+    melodyNotesEl.innerHTML = '';
+    melody.notes.forEach(note => {
+        const span = document.createElement('span');
+        span.className = 'melody-note';
+        span.textContent = note;
+        melodyNotesEl.appendChild(span);
+    });
+    
+    playerNotesDisplayEl.textContent = '';
+    
+    // Play melody button
+    playMelodyBtn.onclick = () => playMelodySequence(melody.notes);
+    
+    // Mini piano keys
+    const miniKeys = document.querySelectorAll('.mini-key');
+    miniKeys.forEach(key => {
+        key.onclick = () => {
+            const note = key.getAttribute('data-note');
+            const frequency = parseFloat(key.getAttribute('data-frequency'));
+            playNote(frequency, 0.3);
+            
+            playerMelodyNotes.push(note);
+            playerNotesDisplayEl.textContent = playerMelodyNotes.join(' - ');
+        };
+    });
+    
+    // Check melody button
+    checkMelodyBtn.onclick = checkMelody;
+    
+    // Reset button
+    resetMelodyBtn.onclick = () => {
+        playerMelodyNotes = [];
+        playerNotesDisplayEl.textContent = '';
+    };
+}
+
+// Play melody sequence
+function playMelodySequence(notes) {
+    const noteFrequencies = {
+        'C': 261.63, 'D': 293.66, 'E': 329.63, 'F': 349.23,
+        'G': 392.00, 'A': 440.00, 'B': 493.88
+    };
+    
+    notes.forEach((note, index) => {
+        setTimeout(() => {
+            playNote(noteFrequencies[note], 0.4);
+        }, index * 500);
+    });
+}
+
+// Check melody
+function checkMelody() {
+    if (playerMelodyNotes.length === 0) {
+        showFeedback(false, 'Play some notes first!');
+        return;
+    }
+    
+    if (JSON.stringify(playerMelodyNotes) === JSON.stringify(currentMelody)) {
+        showFeedback(true, '🎵 Perfect! You played the melody correctly!');
+        updateScore(20);
+        awardBuildingResources('hard');
+        setTimeout(() => {
+            nextBtn.classList.remove('hidden');
+            nextBtn.onclick = loadMelody;
+        }, 2000);
+    } else {
+        showFeedback(false, 'Not quite right. Listen again and try once more!');
+    }
+}
+
+// Load recorder quiz
+function loadRecorderQuiz() {
+    // Select a random fingering based on difficulty
+    let availableFingerings = recorderFingerings;
+    if (currentDifficulty === 'easy') {
+        availableFingerings = recorderFingerings.filter(f => f.difficulty === 'easy');
+    } else if (currentDifficulty === 'medium') {
+        availableFingerings = recorderFingerings.filter(f => f.difficulty === 'easy' || f.difficulty === 'medium');
+    }
+    
+    const fingering = availableFingerings[Math.floor(Math.random() * availableFingerings.length)];
+    currentRecorderFingering = fingering;
+    currentRecorderQuizAnswer = fingering.note;
+    
+    // Display the fingering on the visual recorder
+    displayRecorderFingering(fingering.fingering);
+    
+    // Set up play button
+    playRecorderNoteBtn.onclick = () => playNote(fingering.frequency, 0.5);
+    
+    // Generate answer options
+    const allNotes = [...new Set(recorderFingerings.map(f => f.note))];
+    const incorrectOptions = allNotes.filter(n => n !== fingering.note);
+    
+    // Shuffle and select 3 incorrect options
+    const shuffledIncorrect = incorrectOptions.sort(() => Math.random() - 0.5).slice(0, 3);
+    const options = [fingering.note, ...shuffledIncorrect].sort(() => Math.random() - 0.5);
+    
+    // Display options
+    recorderQuizOptionsEl.innerHTML = '';
+    options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = option;
+        btn.onclick = () => checkRecorderQuizAnswer(option);
+        recorderQuizOptionsEl.appendChild(btn);
+    });
+    
+    // Display a random recorder tip
+    recorderTipDisplayEl.textContent = recorderTips[Math.floor(Math.random() * recorderTips.length)];
+}
+
+// Display recorder fingering
+function displayRecorderFingering(fingering) {
+    fingering.forEach((value, index) => {
+        const hole = document.getElementById('hole' + index);
+        if (hole) {
+            hole.className = 'hole-circle';
+            if (value === 1) {
+                hole.classList.add('closed');
+            } else if (value === 0.5) {
+                hole.classList.add('half');
+            } else {
+                hole.classList.add('open');
+            }
+        }
+    });
+}
+
+// Check recorder quiz answer
+function checkRecorderQuizAnswer(answer) {
+    if (answer === currentRecorderQuizAnswer) {
+        showFeedback(true, `🎺 Excellent! That's ${answer}! ${currentRecorderFingering.description}`);
+        updateScore(15);
+        awardBuildingResources(currentDifficulty || 'easy');
+        setTimeout(() => {
+            nextBtn.classList.remove('hidden');
+            nextBtn.onclick = loadRecorderQuiz;
+        }, 2000);
+    } else {
+        showFeedback(false, `Not quite! The correct answer is ${currentRecorderQuizAnswer}. ${currentRecorderFingering.description}`);
+    }
+}
